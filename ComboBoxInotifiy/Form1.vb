@@ -60,6 +60,8 @@ Public Class Form1
             Console.WriteLine($"Nothing found in {someText} using {characters}")
         End If
 
+
+
     End Sub
 End Class
 
