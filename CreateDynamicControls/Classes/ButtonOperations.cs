@@ -22,10 +22,10 @@ namespace CreateDynamicControls.Classes
         /// Initialize global properties
         /// </summary>
         /// <param name="pControl">Control to place button</param>
-        /// <param name="pBase"></param>
-        /// <param name="pBaseHeightPadding"></param>
-        /// <param name="pLeft"></param>
-        /// <param name="pWidth"></param>
+        /// <param name="pBase">Top</param>
+        /// <param name="pBaseHeightPadding">Padding between buttons</param>
+        /// <param name="pLeft">Left position</param>
+        /// <param name="pWidth">Width of button</param>
         /// <param name="pButtonClick">Click event for button</param>
         public static void Initialize(Control pControl, int pBase, int pBaseHeightPadding, int pLeft, int pWidth, EventHandler pButtonClick)
         {

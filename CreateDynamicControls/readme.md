@@ -36,3 +36,6 @@ private void GenericButtonClick(object sender, EventArgs e)
 }
 ```
 
+## Practical code sample
+
+![screen](assets/CategoryButtons.png)

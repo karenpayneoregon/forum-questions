@@ -34,6 +34,7 @@ namespace CreateDynamicControls
             this.ButtonsListBox = new System.Windows.Forms.ListBox();
             this.ButtonTextButton = new System.Windows.Forms.TextBox();
             this.CreateCategoryButtons = new System.Windows.Forms.Button();
+            this.ProductsListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // CreateButton
@@ -44,7 +45,7 @@ namespace CreateDynamicControls
             this.CreateButton.TabIndex = 0;
             this.CreateButton.Text = "Create button";
             this.CreateButton.UseVisualStyleBackColor = true;
-            this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
+            this.CreateButton.Click += new System.EventHandler(this.CreateButtonClick);
             // 
             // ButtonListButton
             // 
@@ -81,11 +82,20 @@ namespace CreateDynamicControls
             this.CreateCategoryButtons.UseVisualStyleBackColor = true;
             this.CreateCategoryButtons.Click += new System.EventHandler(this.CreateCategoryButtons_Click);
             // 
+            // ProductsListBox
+            // 
+            this.ProductsListBox.FormattingEnabled = true;
+            this.ProductsListBox.Location = new System.Drawing.Point(136, 18);
+            this.ProductsListBox.Name = "ProductsListBox";
+            this.ProductsListBox.Size = new System.Drawing.Size(164, 290);
+            this.ProductsListBox.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 345);
+            this.Controls.Add(this.ProductsListBox);
             this.Controls.Add(this.CreateCategoryButtons);
             this.Controls.Add(this.ButtonTextButton);
             this.Controls.Add(this.ButtonsListBox);
@@ -106,6 +116,7 @@ namespace CreateDynamicControls
         private System.Windows.Forms.ListBox ButtonsListBox;
         private System.Windows.Forms.TextBox ButtonTextButton;
         private System.Windows.Forms.Button CreateCategoryButtons;
+        private System.Windows.Forms.ListBox ProductsListBox;
     }
 }
 
