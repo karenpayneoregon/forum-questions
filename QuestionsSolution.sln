@@ -63,6 +63,8 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SqlSamples", "SqlSamples\Sq
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateDynamicControls", "CreateDynamicControls\CreateDynamicControls.csproj", "{B09FA7C0-E3C2-4DDD-A7CC-8D7046A1041A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Access_mdb", "Access_mdb\Access_mdb.csproj", "{D61C0794-9E0B-4C50-9E41-3C553E084D4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -255,6 +257,14 @@ Global
 		{B09FA7C0-E3C2-4DDD-A7CC-8D7046A1041A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B09FA7C0-E3C2-4DDD-A7CC-8D7046A1041A}.Release|x86.ActiveCfg = Release|Any CPU
 		{B09FA7C0-E3C2-4DDD-A7CC-8D7046A1041A}.Release|x86.Build.0 = Release|Any CPU
+		{D61C0794-9E0B-4C50-9E41-3C553E084D4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D61C0794-9E0B-4C50-9E41-3C553E084D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D61C0794-9E0B-4C50-9E41-3C553E084D4D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D61C0794-9E0B-4C50-9E41-3C553E084D4D}.Debug|x86.Build.0 = Debug|Any CPU
+		{D61C0794-9E0B-4C50-9E41-3C553E084D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D61C0794-9E0B-4C50-9E41-3C553E084D4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D61C0794-9E0B-4C50-9E41-3C553E084D4D}.Release|x86.ActiveCfg = Release|Any CPU
+		{D61C0794-9E0B-4C50-9E41-3C553E084D4D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -282,6 +292,7 @@ Global
 		{D1D66D2B-27E9-4B3F-8B90-99167C699206} = {EAD7EE62-2E71-4E6F-B930-08178B4B7E2E}
 		{466C8F3D-8258-427D-A366-6E6999C0AEC5} = {EAD7EE62-2E71-4E6F-B930-08178B4B7E2E}
 		{B09FA7C0-E3C2-4DDD-A7CC-8D7046A1041A} = {62CF45BA-2347-4541-98F5-36B0F557F038}
+		{D61C0794-9E0B-4C50-9E41-3C553E084D4D} = {62CF45BA-2347-4541-98F5-36B0F557F038}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {43534856-35B6-4101-93D8-EA33E89058B9}
