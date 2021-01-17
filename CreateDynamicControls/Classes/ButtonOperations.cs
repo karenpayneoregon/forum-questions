@@ -26,7 +26,7 @@ namespace CreateDynamicControls.Classes
         /// <param name="pLeft"></param>
         /// <param name="pWidth"></param>
         /// <param name="pButtonClick">Click event for button</param>
-        public static void Internalize(Control pControl, int pBase, int pBaseHeightPadding, int pLeft, int pWidth, EventHandler pButtonClick)
+        public static void Initialize(Control pControl, int pBase, int pBaseHeightPadding, int pLeft, int pWidth, EventHandler pButtonClick)
         {
             
             ParentControl = pControl;
@@ -51,7 +51,7 @@ namespace CreateDynamicControls.Classes
                 Visible = true
             };
 
-            button.Click += new System.EventHandler(EventHandler);
+            button.Click += EventHandler;
             ButtonsList.Add(button);
 
             ParentControl.Controls.Add(button);

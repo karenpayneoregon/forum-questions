@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CreateDynamicControls.Classes;
 
@@ -18,7 +13,7 @@ namespace CreateDynamicControls
         {
             InitializeComponent();
             
-            Operations.Internalize(this,10,30, 100,100, GenericButtonClick);
+            Operations.Initialize(this,10,30, 100,100, GenericButtonClick);
             
         }
 
@@ -40,4 +35,6 @@ namespace CreateDynamicControls
             ButtonsListBox.DataSource = Operations.ButtonsList.Select(button => button.Name).ToList();
         }
     }
+
+
 }
