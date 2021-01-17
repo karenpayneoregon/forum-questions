@@ -6,7 +6,7 @@
 The following sets up constant values for creating buttons
 
 ```csharp
-public static void Internalize(Control pControl, int pBase, int pBaseHeightPadding, int pLeft, int pWidth, EventHandler pButtonClick)
+public static void Initialize(Control pControl, int pBase, int pBaseHeightPadding, int pLeft, int pWidth, EventHandler pButtonClick)
 {
     
     ParentControl = pControl;

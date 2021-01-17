@@ -33,6 +33,7 @@ namespace CreateDynamicControls
             this.ButtonListButton = new System.Windows.Forms.Button();
             this.ButtonsListBox = new System.Windows.Forms.ListBox();
             this.ButtonTextButton = new System.Windows.Forms.TextBox();
+            this.CreateCategoryButtons = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateButton
@@ -70,11 +71,22 @@ namespace CreateDynamicControls
             this.ButtonTextButton.Size = new System.Drawing.Size(120, 20);
             this.ButtonTextButton.TabIndex = 3;
             // 
+            // CreateCategoryButtons
+            // 
+            this.CreateCategoryButtons.Location = new System.Drawing.Point(311, 290);
+            this.CreateCategoryButtons.Name = "CreateCategoryButtons";
+            this.CreateCategoryButtons.Size = new System.Drawing.Size(120, 23);
+            this.CreateCategoryButtons.TabIndex = 4;
+            this.CreateCategoryButtons.Text = "Create button";
+            this.CreateCategoryButtons.UseVisualStyleBackColor = true;
+            this.CreateCategoryButtons.Click += new System.EventHandler(this.CreateCategoryButtons_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 345);
+            this.Controls.Add(this.CreateCategoryButtons);
             this.Controls.Add(this.ButtonTextButton);
             this.Controls.Add(this.ButtonsListBox);
             this.Controls.Add(this.ButtonListButton);
@@ -93,6 +105,7 @@ namespace CreateDynamicControls
         private System.Windows.Forms.Button ButtonListButton;
         private System.Windows.Forms.ListBox ButtonsListBox;
         private System.Windows.Forms.TextBox ButtonTextButton;
+        private System.Windows.Forms.Button CreateCategoryButtons;
     }
 }
 

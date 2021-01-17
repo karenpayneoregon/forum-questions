@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using CreateDynamicControls.Classes.Controls;
 
 namespace CreateDynamicControls.Classes
 {
     public class Operations
     {
-        public static List<Button> ButtonsList { get; set; }
+        public static List<DataButton> ButtonsList { get; set; }
         public static int Base { get; set; }
         public static int Left { get; set; }
         public static int BaseWidth { get; set; }
@@ -35,13 +36,13 @@ namespace CreateDynamicControls.Classes
             Left = pLeft;
             BaseWidth = pWidth;
             EventHandler = pButtonClick;
-            ButtonsList = new List<Button>();
+            ButtonsList = new List<DataButton>();
             
         }
         public static void CreateButton(string text = "")
         {
 
-            var button = new Button()
+            var button = new DataButton()
             {
                 Name = $"{BaseName}{Index}",
                 Text = text, 
@@ -58,6 +59,26 @@ namespace CreateDynamicControls.Classes
             Base += BaseHeightPadding;
             Index += 1;
         }
+        public static void CreateCategoryButton(string text, int categoryIdentifier)
+        {
 
+            var button = new DataButton()
+            {
+                Name = $"{BaseName}{Index}",
+                Text = text,
+                Width = BaseWidth,
+                Location = new Point(Left, Base),
+                Parent = ParentControl, 
+                Identifier = categoryIdentifier,
+                Visible = true
+            };
+
+            button.Click += EventHandler;
+            ButtonsList.Add(button);
+
+            ParentControl.Controls.Add(button);
+            Base += BaseHeightPadding;
+            Index += 1;
+        }
     }
 }
