@@ -10,7 +10,7 @@ namespace Access_mdb
 {
     public class DataOperations
     {
-        public static string _connectionString = 
+        public static string ConnectionString = 
             $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "db1.mdb")};";
 
         public static List<string> Read()
@@ -18,7 +18,7 @@ namespace Access_mdb
             
             var list = new List<string>();
             
-            using (var cn = new OleDbConnection() {ConnectionString = _connectionString})
+            using (var cn = new OleDbConnection() {ConnectionString = ConnectionString})
             {
                 using (var cmd = new OleDbCommand() {Connection = cn})
                 {

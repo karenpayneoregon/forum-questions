@@ -19,7 +19,13 @@ namespace Access_mdb
 
         private void LoadDataButton_Click(object sender, EventArgs e)
         {
-            var cb = new ComboBox() {Left = 10, Top = 10, DataSource = DataOperations.Read() };
+            var cb = new ComboBox()
+            {
+                Left = 10, 
+                Top = 10, 
+                DataSource = DataOperations.Read()
+            };
+            
             Controls.Add(cb);
         }
     }
