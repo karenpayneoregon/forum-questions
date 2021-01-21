@@ -22,40 +22,44 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.CompanyNameComoboBox = New System.Windows.Forms.ComboBox()
-        Me.InsertButton = New System.Windows.Forms.Button()
+        Me.LoadDataTableButton = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'CompanyNameComoboBox
+        'LoadDataTableButton
         '
-        Me.CompanyNameComoboBox.FormattingEnabled = True
-        Me.CompanyNameComoboBox.Location = New System.Drawing.Point(18, 19)
-        Me.CompanyNameComoboBox.Name = "CompanyNameComoboBox"
-        Me.CompanyNameComoboBox.Size = New System.Drawing.Size(156, 23)
-        Me.CompanyNameComoboBox.TabIndex = 0
+        Me.LoadDataTableButton.Location = New System.Drawing.Point(12, 243)
+        Me.LoadDataTableButton.Name = "LoadDataTableButton"
+        Me.LoadDataTableButton.Size = New System.Drawing.Size(75, 23)
+        Me.LoadDataTableButton.TabIndex = 2
+        Me.LoadDataTableButton.Text = "Load"
+        Me.LoadDataTableButton.UseVisualStyleBackColor = True
         '
-        'InsertButton
+        'DataGridView1
         '
-        Me.InsertButton.Location = New System.Drawing.Point(180, 19)
-        Me.InsertButton.Name = "InsertButton"
-        Me.InsertButton.Size = New System.Drawing.Size(75, 23)
-        Me.InsertButton.TabIndex = 1
-        Me.InsertButton.Text = "Insert"
-        Me.InsertButton.UseVisualStyleBackColor = True
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowTemplate.Height = 25
+        Me.DataGridView1.Size = New System.Drawing.Size(559, 224)
+        Me.DataGridView1.TabIndex = 3
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.InsertButton)
-        Me.Controls.Add(Me.CompanyNameComoboBox)
+        Me.ClientSize = New System.Drawing.Size(559, 296)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.LoadDataTableButton)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Load Async"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents CompanyNameComoboBox As ComboBox
-    Friend WithEvents InsertButton As Button
+    Friend WithEvents LoadDataTableButton As Button
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

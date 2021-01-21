@@ -1,15 +1,14 @@
 ﻿Imports SqlSamples.Classes
 
 Public Class Form1
-    Private Sub InsertButton_Click(sender As Object, e As EventArgs) Handles InsertButton.Click
+    Private Async Sub LoadDataTableButton_Click(sender As Object, e As EventArgs) _
+        Handles LoadDataTableButton.Click
 
-        If CompanyNameComoboBox.SelectedIndex > -1 Then
-            Dim primaryKey = Operations.InsertItem(CompanyNameComoboBox.Text)
-            If Operations.HasException Then
-                MessageBox.Show($"Adding record failed{vbTab}{Operations.LastException.Message}")
-                Exit Sub
-            End If
-        End If
+        Dim dt = Await Operations.LoadCustomersAsync()
 
+        DataGridView1.InvokeIfRequired(
+            Sub(dgv)
+                dgv.DataSource = dt
+            End Sub)
     End Sub
 End Class
