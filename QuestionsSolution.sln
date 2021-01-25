@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateDynamicControls", "Cr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Access_mdb", "Access_mdb\Access_mdb.csproj", "{D61C0794-9E0B-4C50-9E41-3C553E084D4D}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CLRSignatures", "CLRSignatures\CLRSignatures.vbproj", "{70AF000C-2CC9-47AE-908B-E562B432F792}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -265,6 +267,14 @@ Global
 		{D61C0794-9E0B-4C50-9E41-3C553E084D4D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D61C0794-9E0B-4C50-9E41-3C553E084D4D}.Release|x86.ActiveCfg = Release|Any CPU
 		{D61C0794-9E0B-4C50-9E41-3C553E084D4D}.Release|x86.Build.0 = Release|Any CPU
+		{70AF000C-2CC9-47AE-908B-E562B432F792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70AF000C-2CC9-47AE-908B-E562B432F792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70AF000C-2CC9-47AE-908B-E562B432F792}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{70AF000C-2CC9-47AE-908B-E562B432F792}.Debug|x86.Build.0 = Debug|Any CPU
+		{70AF000C-2CC9-47AE-908B-E562B432F792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70AF000C-2CC9-47AE-908B-E562B432F792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70AF000C-2CC9-47AE-908B-E562B432F792}.Release|x86.ActiveCfg = Release|Any CPU
+		{70AF000C-2CC9-47AE-908B-E562B432F792}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -293,6 +303,7 @@ Global
 		{466C8F3D-8258-427D-A366-6E6999C0AEC5} = {EAD7EE62-2E71-4E6F-B930-08178B4B7E2E}
 		{B09FA7C0-E3C2-4DDD-A7CC-8D7046A1041A} = {62CF45BA-2347-4541-98F5-36B0F557F038}
 		{D61C0794-9E0B-4C50-9E41-3C553E084D4D} = {62CF45BA-2347-4541-98F5-36B0F557F038}
+		{70AF000C-2CC9-47AE-908B-E562B432F792} = {EAD7EE62-2E71-4E6F-B930-08178B4B7E2E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {43534856-35B6-4101-93D8-EA33E89058B9}
