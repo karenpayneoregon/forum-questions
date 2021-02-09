@@ -4,7 +4,7 @@ Imports Newtonsoft.Json
 
 Module Module1
 
-    Sub Main()
+	Sub Main()
 
 
 		MainAsync(New String() {"Hello", "Karen"}).
@@ -24,7 +24,8 @@ Module Module1
 
 		Console.ReadLine()
 	End Sub
-    Public Async Function MainAsync(ByVal args() As String) As Task
+
+	Public Async Function MainAsync(ByVal args() As String) As Task
 
         Await Task.Delay(30)
         Console.WriteLine($"{args(0)} {args(1)}")
