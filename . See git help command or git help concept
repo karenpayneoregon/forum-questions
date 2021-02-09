@@ -1,0 +1,20 @@
+* 239a1eb refactor
+* 7eb2af8 verify signature code
+* 93daf56 async load data table to data grid view
+* 221ec10 minor refactoring
+* 51749a2 mdb code sample
+* b3a9d05 Finished category example
+* c484ad5 Added data example
+* dd2dbb2 button experiment
+* d3cbf89 create button project added
+* 1904924 added new project
+* 552dff5 changed namespace in data ops
+* d1af704 comments
+* 4993845 Excel code sample
+* 508ef15 added readme
+* dcb2e52 added ip curl
+* 74d1dcf additions
+* 4a72b62 C# async main
+* 0a986f5 async console
+* 2ffafd9 Add project files.
+* 5b3c118 Add .gitignore and .gitattributes.

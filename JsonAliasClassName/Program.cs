@@ -47,7 +47,7 @@ namespace JsonAliasClassName
             {
                 var set = new List<string>();
                 
-                for (var i = 0; i < chunkByLines && !reader.EndOfStream; i++)
+                for (var index = 0; index < chunkByLines && !reader.EndOfStream; index++)
                 {
                     set.Add(reader.ReadLine());
                 }

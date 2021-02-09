@@ -17,9 +17,7 @@ Public Class ExcelOperations
             doc.ImportDataTable(1, SLConvert.ToColumnIndex("A"), pDataTable, pColumnHeaders)
 
 
-            Dim style As New SLStyle With {
-                .FormatCode = "MM/dd//yyyy"
-            }
+            Dim style As New SLStyle With {.FormatCode = "MM/dd//yyyy"}
 
             ' Format modified date column
             doc.SetColumnStyle(11, style)
