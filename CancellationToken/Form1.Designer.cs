@@ -33,6 +33,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.ProgressBarSpecial = new ProgressODoom.ProgressBarEx();
             this.RunButton1 = new System.Windows.Forms.Button();
+            this.metalProgressPainter1 = new ProgressODoom.MetalProgressPainter();
             this.SuspendLayout();
             // 
             // RunButton
@@ -72,6 +73,7 @@
             this.ProgressBarSpecial.Minimum = 0;
             this.ProgressBarSpecial.Name = "ProgressBarSpecial";
             this.ProgressBarSpecial.ProgressPadding = 0;
+            this.ProgressBarSpecial.ProgressPainter = this.metalProgressPainter1;
             this.ProgressBarSpecial.ProgressType = ProgressODoom.ProgressType.Smooth;
             this.ProgressBarSpecial.ShowPercentage = true;
             this.ProgressBarSpecial.Size = new System.Drawing.Size(297, 23);
@@ -89,12 +91,19 @@
             this.RunButton1.UseVisualStyleBackColor = true;
             this.RunButton1.Click += new System.EventHandler(this.RunButton1_Click);
             // 
+            // metalProgressPainter1
+            // 
+            this.metalProgressPainter1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(202)))), ((int)(((byte)(201)))));
+            this.metalProgressPainter1.GlossPainter = null;
+            this.metalProgressPainter1.Highlight = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(177)))), ((int)(((byte)(176)))));
+            this.metalProgressPainter1.ProgressBorderPainter = null;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(353, 206);
+            this.ClientSize = new System.Drawing.Size(338, 206);
             this.Controls.Add(this.RunButton1);
             this.Controls.Add(this.ProgressBarSpecial);
             this.Controls.Add(this.progressBar1);
@@ -114,6 +123,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private ProgressODoom.ProgressBarEx ProgressBarSpecial;
         private System.Windows.Forms.Button RunButton1;
+        private ProgressODoom.MetalProgressPainter metalProgressPainter1;
     }
 }
 

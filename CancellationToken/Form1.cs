@@ -78,7 +78,7 @@ namespace CancellationToken
             {
                 int value = ProgressBarSpecial.Value + 100;
 
-                await Task.Delay(50);
+                await Task.Delay(1);
 
                 if (value > ProgressBarSpecial.Maximum)
                 {
