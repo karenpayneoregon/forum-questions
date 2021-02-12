@@ -99,5 +99,15 @@ namespace CancellationToken
         {
             await ProgressbarExperiment();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private static void Demo()
+        {
+
+        }
     }
 }

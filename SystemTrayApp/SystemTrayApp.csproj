@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SystemTrayApp</RootNamespace>
     <AssemblyName>SystemTrayApp</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -61,6 +61,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tulpep.NotificationWindow, Version=1.1.38.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tulpep.NotificationWindow.1.1.38\lib\net40\Tulpep.NotificationWindow.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DataOperations.cs" />
@@ -111,6 +114,8 @@
     <Content Include="Images\About.png" />
     <Content Include="Images\Exit.png" />
     <Content Include="Images\Explorer.png" />
+    <None Include="readme.md" />
+    <None Include="Resources\OEDsmall.png" />
     <None Include="Images\WinFolder.png" />
     <None Include="Images\FolderOpen.bmp" />
     <None Include="Images\main.ico" />

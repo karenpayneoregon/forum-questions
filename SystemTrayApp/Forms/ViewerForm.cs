@@ -1,9 +1,12 @@
 ﻿
 
+using System;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using SystemTrayApp.Classes;
+
 using static System.DateTime;
 
 namespace SystemTrayApp.Forms
@@ -18,7 +21,14 @@ namespace SystemTrayApp.Forms
 
             WatchOperations.Instance.FileSystemWatcher.Created += FileCreated;
             WatchOperations.Instance.FileSystemWatcher.Renamed += FileRenamed;
+            
+            Closing += OnClosing;
 
+        }
+
+        private void OnClosing(object sender, CancelEventArgs e)
+        {
+            MessageBox.Show("Closing");
         }
 
         private void ViewerForm_Shown(object sender, System.EventArgs e)
@@ -84,6 +94,10 @@ namespace SystemTrayApp.Forms
 
             ResizeSetFocus();
 
+            popupNotifier1.Delay = 100000;
+            popupNotifier1.ContentText = $"New file\n{e.Name}";
+            popupNotifier1.Popup();
+
         }
 
         private void ResizeSetFocus()
@@ -106,8 +120,29 @@ namespace SystemTrayApp.Forms
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            var test = WatchFileContainer.Instance.NewFileList.Count;
-            MessageBox.Show(test.ToString());
+            //var test = WatchFileContainer.Instance.NewFileList.Count;
+            //MessageBox.Show(test.ToString());
+        }
+
+        private void CancelButton_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void CloseWithOkWindowButton_Click(object sender, System.EventArgs e)
+        {
+
+        }
+        const int WM_CONTEXTMENU = 0x007B;
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == WM_CONTEXTMENU)
+            {
+                m.Result = IntPtr.Zero;
+                //Close();
+            }
+            else
+                base.WndProc(ref m);
         }
     }
 }

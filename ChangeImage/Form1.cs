@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -29,7 +30,12 @@ namespace ChangeImage
 
         private void Form2OnChangeImageByName(string name)
         {
-            pictureBox1.Image = (Bitmap)Resources.ResourceManager.GetObject(name);
+
+
+            pictureBox1.Image = Resources.ResourceManager.GetObject(name) is Icon ? 
+                ((Icon) Resources.ResourceManager.GetObject(name))?.ToBitmap() : 
+                (Bitmap) Resources.ResourceManager.GetObject(name);
+
         }
 
         private void Form2OnChangeImage(Bitmap image)

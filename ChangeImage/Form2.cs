@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Resources;
 using System.Windows.Forms;
 using ChangeImage.Properties;
+using Icon = System.Drawing.Icon;
 
 namespace ChangeImage
 {
@@ -27,6 +29,26 @@ namespace ChangeImage
         private void GetImageNames()
         {
             var resourceSet = Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+
+            foreach (DictionaryEntry dictionaryEntry in resourceSet)
+            {
+                Debug.WriteLine(dictionaryEntry.Value.GetType());
+            }
+
+            var resourceSet1 = Resources.ResourceManager
+                .GetResourceSet(CultureInfo.CurrentUICulture, true, true)
+                .OfType<DictionaryEntry>().Where(x => x.Value.GetType()  == typeof(Icon));
+
+            if (resourceSet1.Count() >0)
+            {
+                resourceSet1.Select(x => x.Value.ToString()).OrderBy(x => x).ToList();
+                foreach (var dictionaryEntry in resourceSet1)
+                {
+                    Debug.WriteLine($"\t{dictionaryEntry.Key}");
+                }
+            }
+
+
             foreach (var entry in resourceSet.OfType<DictionaryEntry>().Select((item, i) => new { Index = i, Key = item.Key, Value = item.Value }))
             {
                 listBox1.Items.Add(entry.Key);

@@ -11,7 +11,8 @@ namespace GemboxDocumentTest.Classes
     {
         private static void InitializeGemSoftware()
         {
-            ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+            // Lindon's lic
+            ComponentInfo.SetLicense("DN-2019Dec13-9cYGhuNVexlaPHgiaefFWyGJEtlwcolapVxfAAMCI+f6ZaUaDzNkD6+0jMM5XWUygDSAWTLD6iuvM3kUiJz5m/KX+/g==A");
         }
 
         public static void Example1()
