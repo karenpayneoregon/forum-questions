@@ -32,6 +32,8 @@ namespace WorkingWithMsAccessImages
             this.AddImageButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.UpdateCurrentDescriptionButton = new System.Windows.Forms.Button();
+            this.DescriptionTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -64,11 +66,30 @@ namespace WorkingWithMsAccessImages
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // UpdateCurrentDescriptionButton
+            // 
+            this.UpdateCurrentDescriptionButton.Location = new System.Drawing.Point(12, 383);
+            this.UpdateCurrentDescriptionButton.Name = "UpdateCurrentDescriptionButton";
+            this.UpdateCurrentDescriptionButton.Size = new System.Drawing.Size(104, 23);
+            this.UpdateCurrentDescriptionButton.TabIndex = 3;
+            this.UpdateCurrentDescriptionButton.Text = "Update description";
+            this.UpdateCurrentDescriptionButton.UseVisualStyleBackColor = true;
+            this.UpdateCurrentDescriptionButton.Click += new System.EventHandler(this.UpdateCurrentDescriptionButton_Click);
+            // 
+            // DescriptionTextBox
+            // 
+            this.DescriptionTextBox.Location = new System.Drawing.Point(122, 386);
+            this.DescriptionTextBox.Name = "DescriptionTextBox";
+            this.DescriptionTextBox.Size = new System.Drawing.Size(267, 20);
+            this.DescriptionTextBox.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 505);
+            this.Controls.Add(this.DescriptionTextBox);
+            this.Controls.Add(this.UpdateCurrentDescriptionButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.AddImageButton);
@@ -79,6 +100,7 @@ namespace WorkingWithMsAccessImages
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -87,6 +109,8 @@ namespace WorkingWithMsAccessImages
         private System.Windows.Forms.Button AddImageButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button UpdateCurrentDescriptionButton;
+        private System.Windows.Forms.TextBox DescriptionTextBox;
     }
 }
 

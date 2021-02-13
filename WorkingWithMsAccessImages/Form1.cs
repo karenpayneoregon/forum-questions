@@ -57,5 +57,29 @@ namespace WorkingWithMsAccessImages
                     "Failed to add image\n");
             }
         }
+
+        private void UpdateCurrentDescriptionButton_Click(object sender, EventArgs e)
+        {
+            if (_bindingSource.Current is null)
+            {
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(DescriptionTextBox.Text)) return;
+            
+            var row = ((DataRowView) _bindingSource.Current).Row;
+            var id = row.Field<int>("Identifier");
+            var ops = new Operations();
+                
+            var result = ops.UpdateCurrentDescription(id, DescriptionTextBox.Text);
+            if (result.Success == false)
+            {
+                MessageBox.Show($@"{result.ErrorMessage}");
+            }
+            else
+            {
+                row.SetField("Description", DescriptionTextBox.Text);
+            }
+        }
     }
 }

@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.OleDb;
 using System.IO;
-using static WorkingWithMsAccessImages.Classes.ConversionModule;
+using static WorkingWithMsAccessImages.Classes.ConversionHelpers;
 
 namespace WorkingWithMsAccessImages.Classes
 {
@@ -10,9 +10,17 @@ namespace WorkingWithMsAccessImages.Classes
     {
         public DataTable PictureDataTable { get; set; }
         public DataTable CategoriesDataTable { get; set; }
+        
         public string ConnectionString = 
             "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb";
 
+        /// <summary>
+        /// Add new record, does not populate all columns
+        /// </summary>
+        /// <param name="fileName">Existing image file</param>
+        /// <param name="category">primary key</param>
+        /// <param name="description">Image description</param>
+        /// <returns></returns>
         public PictureItem AddImage(string fileName, int category, string description)
         {
 
@@ -59,13 +67,13 @@ namespace WorkingWithMsAccessImages.Classes
                         {
                             ParameterName = "@BaseName",
                             DbType = DbType.String,
-                            Value = System.IO.Path.GetFileNameWithoutExtension(fileName).ToLower()
+                            Value = Path.GetFileNameWithoutExtension(fileName).ToLower()
                         },
                         new OleDbParameter
                         {
                             ParameterName = "@FileExtension",
                             DbType = DbType.String,
-                            Value = System.IO.Path.GetExtension(fileName).Replace(".", "").ToLower()
+                            Value = Path.GetExtension(fileName).Replace(".", "").ToLower()
                         }
                     });
 
@@ -93,6 +101,65 @@ namespace WorkingWithMsAccessImages.Classes
                 }
             }
         }
+        /// <summary>
+        /// Update description for a record
+        /// </summary>
+        /// <param name="primaryKey">Identifier for record to update</param>
+        /// <param name="description">Description of picture</param>
+        /// <returns></returns>
+        public PictureItem UpdateCurrentDescription(int primaryKey, string description)
+        {
+            var results = new PictureItem() { Success = false };
+            
+            using (var cn = new OleDbConnection {ConnectionString = ConnectionString})
+            {
+                using (var cmd = new OleDbCommand {Connection = cn})
+                {
+                    cmd.CommandText = 
+                        "UPDATE Pictures SET Description = @Description " + 
+                        "WHERE Identifier = @Identifier";
+
+                    var descriptionParameter = new OleDbParameter
+                    {
+                        DbType = DbType.String,
+                        ParameterName = "@Description",
+                        Value = description
+                    };
+
+                    cmd.Parameters.Add(descriptionParameter);
+                    
+                    var identifierParameter = new OleDbParameter
+                    {
+                        DbType = DbType.String,
+                        ParameterName = "@Identifier",
+                        Value = primaryKey
+                    };
+
+                    cmd.Parameters.Add(identifierParameter);
+
+                    try
+                    {
+                        cn.Open();
+                        int affected = cmd.ExecuteNonQuery();
+                        if (affected == 1)
+                        {
+                            results.Success = true;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        results.ErrorMessage = e.Message;
+                        return results;
+                    }
+
+                }
+            }
+
+            return results;
+        }
+        /// <summary>
+        /// Load two tables, category and pictures
+        /// </summary>
         public void LoadImages()
         {
             using (var cn = new OleDbConnection { ConnectionString = ConnectionString })
@@ -121,6 +188,11 @@ namespace WorkingWithMsAccessImages.Classes
                 }
             }
         }
+        /// <summary>
+        /// Load single record by primary key
+        /// </summary>
+        /// <param name="primaryKey">Primary key of record to locate and load</param>
+        /// <returns></returns>
         public Tuple<string, byte[]> LoadSingleImage(int primaryKey)
         {
             byte[] imageBytes;
@@ -146,7 +218,9 @@ namespace WorkingWithMsAccessImages.Classes
                 }
             }
         }
-
+        /// <summary>
+        /// Load two DataTable
+        /// </summary>
         public Operations()
         {
             LoadImages();
