@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("UserControlDemo")>
+<Assembly: AssemblyTitle("CheckedListBoxDemo")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("UserControlDemo")>
+<Assembly: AssemblyProduct("CheckedListBoxDemo")>
 <Assembly: AssemblyCopyright("Copyright ©  2021")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("fcb5e781-f61f-40d2-89ac-edd55ab0b053")>
+<Assembly: Guid("d6128cc7-47aa-48fe-a769-868417706d16")>
 
 ' Version information for an assembly consists of the following four values:
 '

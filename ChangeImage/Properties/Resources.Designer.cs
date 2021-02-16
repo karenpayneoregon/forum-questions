@@ -83,6 +83,36 @@ namespace ChangeImage.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        public static System.Drawing.Icon Csharp {
+            get {
+                object obj = ResourceManager.GetObject("Csharp", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon DetailView {
+            get {
+                object obj = ResourceManager.GetObject("DetailView", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ErrorForm {
+            get {
+                object obj = ResourceManager.GetObject("ErrorForm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         public static System.Drawing.Icon git1 {
             get {
                 object obj = ResourceManager.GetObject("git1", resourceCulture);
@@ -113,10 +143,29 @@ namespace ChangeImage.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Microsoft1 {
+            get {
+                object obj = ResourceManager.GetObject("Microsoft1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap ready {
             get {
                 object obj = ResourceManager.GetObject("ready", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hello.
+        /// </summary>
+        public static string TextFile1 {
+            get {
+                return ResourceManager.GetString("TextFile1", resourceCulture);
             }
         }
     }

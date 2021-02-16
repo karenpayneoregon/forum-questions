@@ -35,9 +35,7 @@ namespace ChangeImage
                 Debug.WriteLine(dictionaryEntry.Value.GetType());
             }
 
-            var resourceSet1 = Resources.ResourceManager
-                .GetResourceSet(CultureInfo.CurrentUICulture, true, true)
-                .OfType<DictionaryEntry>().Where(x => x.Value.GetType()  == typeof(Icon));
+            var resourceSet1 = Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true).OfType<DictionaryEntry>().Where(x => x.Value.GetType()  == typeof(Icon));
 
             if (resourceSet1.Count() >0)
             {

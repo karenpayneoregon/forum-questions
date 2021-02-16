@@ -31,16 +31,27 @@ namespace ChangeImage
         private void Form2OnChangeImageByName(string name)
         {
 
-
-            pictureBox1.Image = Resources.ResourceManager.GetObject(name) is Icon ? 
-                ((Icon) Resources.ResourceManager.GetObject(name))?.ToBitmap() : 
-                (Bitmap) Resources.ResourceManager.GetObject(name);
-
+            if (Resources.ResourceManager.GetObject(name) is Icon)
+            {
+                pictureBox1.SizeMode = PictureBoxSizeMode.Normal;
+                pictureBox1.Image = ((Icon) Resources.ResourceManager.GetObject(name))?.ToBitmap();
+            }
+            else
+            {
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox1.Image = (Bitmap)Resources.ResourceManager.GetObject(name);
+            }
+            
         }
 
         private void Form2OnChangeImage(Bitmap image)
         {
             pictureBox1.Image = image;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
