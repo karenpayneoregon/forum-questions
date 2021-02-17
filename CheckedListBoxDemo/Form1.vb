@@ -4,10 +4,10 @@
         CheckedListBox1.CheckOnClick = True
 
         Dim itemList As New List(Of Item) From {
-            New Item() With {.Text = "One", .TextBox = TextBox1},
-            New Item() With {.Text = "Two", .TextBox = TextBox2},
-            New Item() With {.Text = "Three", .TextBox = TextBox3},
-            New Item() With {.Text = "Four", .TextBox = TextBox4}
+            New Item() With {.Text = "One", .TextBoxName = "TextBox1"},
+            New Item() With {.Text = "Two", .TextBoxName = "TextBox2"},
+            New Item() With {.Text = "Three", .TextBoxName = "TextBox3"},
+            New Item() With {.Text = "Four", .TextBoxName = "TextBox4"}
         }
 
         CheckedListBox1.DataSource = itemList
@@ -19,17 +19,19 @@
 
         Dim currentItem = CType(CheckedListBox1.SelectedItem, Item)
 
+        Dim TargetTextBox As TextBox = CType(Controls(currentItem.TextBoxName), TextBox)
+
         If e.NewValue = CheckState.Checked Then
-            currentItem.TextBox.Text = currentItem.Text
+            TargetTextBox.Text = currentItem.Text
         Else
-            currentItem.TextBox.Text = ""
+            TargetTextBox.Text = ""
         End If
     End Sub
 End Class
 
 Public Class Item
     Public Property Text() As String
-    Public Property TextBox() As TextBox
+    Public Property TextBoxName() As String
     Public Overrides Function ToString() As String
         Return Text
     End Function
