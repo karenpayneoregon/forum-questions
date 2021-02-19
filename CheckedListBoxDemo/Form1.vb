@@ -27,6 +27,15 @@
             TargetTextBox.Text = ""
         End If
     End Sub
+
+    Private Sub CopyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyToolStripMenuItem.Click
+        Clipboard.SetText(ComboBox1.Text)
+    End Sub
+
+    Private Sub CutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CutToolStripMenuItem.Click
+        Clipboard.SetText(ComboBox1.Text)
+        ComboBox1.Items.RemoveAt(ComboBox1.SelectedIndex)
+    End Sub
 End Class
 
 Public Class Item
