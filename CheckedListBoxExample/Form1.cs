@@ -47,13 +47,7 @@ namespace CheckedListBoxExample
         public static void FindItemAndSetChecked(this CheckedListBox sender, string valueToLocate, bool checkedState = true)
         {
 
-            var result = (from @this in sender.Items.Cast<string>().Select((item, index) => new
-                {
-                    Item = item,
-                    Index = index
-                })
-                where @this.Item == valueToLocate
-                select @this).FirstOrDefault();
+            var result = (sender.Items.Cast<string>().Select((item, index) => new {Item = item, Index = index}).Where(@this => @this.Item == valueToLocate)).FirstOrDefault();
 
             if (result != null)
             {

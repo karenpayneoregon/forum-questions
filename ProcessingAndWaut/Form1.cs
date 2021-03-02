@@ -6,85 +6,99 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
+using System.ServiceProcess;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using ProcessingAndWait.Classes;
 
 namespace ProcessingAndWait
 {
     public partial class Form1 : Form
     {
-        private string _fileName = "ipPower.txt";
+        
         public Form1()
         {
             InitializeComponent();
+        }
 
-            if (File.Exists(_fileName))
+        /// <summary>
+        /// Get IP address synchronously
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void GetIpAddressVersion1Button_Click(object sender, EventArgs e)
+        {
+            IpAddressTextBox1.Text = "";
+            var ipAddress = await PowerShellOperations.GetIpAddress();
+            IpAddressTextBox1.Text = ipAddress;
+        }
+        
+        /// <summary>
+        /// Get IP address asynchronously
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void GetIpAddressVersion2Button_Click(object sender, EventArgs e)
+        {
+            IpAddressTextBox2.Text = "";
+            
+            string ipAddress = "";
+            
+            await Task.Run(async () => { ipAddress = await PowerShellOperations.GetIpAddress(); });
+
+            if (!string.IsNullOrWhiteSpace(ipAddress))
             {
-                File.Delete(_fileName);
+                IpAddressTextBox2.Text = ipAddress;
             }
+            else
+            {
+                IpAddressTextBox2.Text = "Failed to obtain IP address";
+            }
+        }
+
+        /// <summary>
+        /// Get all services and their status
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void GetServicesAsJsonButton_Click(object sender, EventArgs e)
+        {
+            ServicesListView.Items.Clear();
+
+            var serviceItems = await PowerShellOperations.GetServicesAsJson();
+            ServiceCountLabel.Text = serviceItems.Count.ToString();
+            
+            ServicesListView.BeginUpdate();
+
+            try
+            {
+                foreach (var serviceItem in serviceItems)
+                {
+                    ServicesListView.Items.Add(new ListViewItem(serviceItem.ItemArray()));
+                }
+
+                ServicesListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                ServicesListView.Items[0].Selected = true;
+                ActiveControl = ServicesListView;
+                
+            }
+            finally
+            {
+                ServicesListView.EndUpdate();
+            }
+            
+            ServicesListView.EnsureVisible(0);
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            PowerShellScriptExecute();
+            await PowerShellOperations.GetIpAddresses();
         }
 
-        public void PowerShellScriptExecute()
-        {
-            var start = new ProcessStartInfo
-            {
-                FileName = "powershell.exe",
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-                Arguments = "Invoke-RestMethod ipinfo.io/ip", 
-                CreateNoWindow = true
-            };
 
-            using var process = Process.Start(start);
-            using var reader = process.StandardOutput;
-            process.EnableRaisingEvents = true;
-            var ipAddressResult = reader.ReadToEnd();
-            File.WriteAllText(_fileName, ipAddressResult);
-
-            process.WaitForExitAsync();
-            
-            // executes after the WaitForExitAsync is done
-            Debug.WriteLine(File.ReadAllText(_fileName));
-        }
-     
-    }
-    /// <summary>
-    /// Place in a separate file
-    /// </summary>
-    public static class Extensions
-    {
-        /// <summary>
-        /// Async wait for process to complete
-        /// </summary>
-        /// <param name="process">Process to wait for</param>
-        /// <param name="cancellationToken">Optional cancellation token if the process was lengthy</param>
-        /// <returns></returns>
-        public static Task WaitForExitAsync(this Process process, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            if (process.HasExited)
-            {
-                return Task.CompletedTask;
-            }
-
-            var tcs = new TaskCompletionSource<object>();
-            
-            process.EnableRaisingEvents = true;
-            process.Exited += (sender, args) => tcs.TrySetResult(null);
-
-            if (cancellationToken != default)
-            {
-                cancellationToken.Register(() => tcs.SetCanceled());
-            }
-
-            return process.HasExited ? Task.CompletedTask : tcs.Task;
-        }
     }
 }
