@@ -8,5 +8,10 @@ In one case results are in Json which will be presented in a ListView while anot
 
 ![.NET 5 or .NET Core](assets/Versions.png)
 
+## NuGet packages
+
+- [System.Text.Json](https://www.nuget.org/packages/System.Text.Json/6.0.0-preview.1.21102.12)
+- [System.ServiceProcess.ServiceController](https://www.nuget.org/packages/System.ServiceProcess.ServiceController/6.0.0-preview.1.21102.12)
+
 
 ![screen](assets/Process1.png)
