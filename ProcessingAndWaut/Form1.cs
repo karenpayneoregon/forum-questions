@@ -94,11 +94,18 @@ namespace ProcessingAndWait
             ServicesListView.EnsureVisible(0);
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            await PowerShellOperations.GetIpAddresses();
+            
         }
 
 
+    }
+
+    public class IccTrans 
+    {
+        public decimal ID { get; set; }
+        public string SSN { get; set; }
+        
     }
 }
