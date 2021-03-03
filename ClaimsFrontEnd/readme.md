@@ -1,6 +1,6 @@
 ﻿# About
 
-The intent for this project is to show how decent code can be great code by first introducing decent code then move to how can the decent code be done better.
+The intent for this project (in tangent with this [backend project](https://github.com/karenpayneoregon/forum-questions/tree/master/ClaimsLibrary)) is to show how decent code can be great code by first introducing decent code then move to how can the decent code be done better.
 
 Note that what is presented here is not fully documented and is being shown for how in some cases when learning there will be multiple options shown to perform specific task.
 
