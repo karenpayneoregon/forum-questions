@@ -112,12 +112,49 @@ namespace ProcessingAndWait.Classes
 
             await File.WriteAllTextAsync(fileName, fileContents);
             await process.WaitForExitAsync();
-            
+
             var json = await File.ReadAllTextAsync(fileName);
 
             return JsonSerializer.Deserialize<List<ServiceItem>>(json);
 
         }
+        /// <summary>
+        /// Get services to web page synchronously while above does asynchronously to json.
+        /// This method may also be asynchronous.
+        /// </summary>
+        public static void GetServicesAsHtml()
+        {
+            string fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "service.html");
+
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+
+            var start = new ProcessStartInfo
+            {
+                FileName = "powershell.exe",
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                Arguments = "Get-Service | Select-Object Name, DisplayName, @{ n='Status'; e={ $_.Status.ToString() } }, @{ n='table'; e={ 'Status' } } | ConvertTo-html",
+                CreateNoWindow = true
+            };
+
+            using var process = Process.Start(start);
+            using var reader = process.StandardOutput;
+
+            process.EnableRaisingEvents = true;
+
+            var fileContents = reader.ReadToEnd();
+
+            File.WriteAllText(fileName, fileContents);
+            process.WaitForExit();
+
+            ChromeLauncher.OpenLink(fileName);
+
+        }
+        
+
         /// <summary>
         /// Get all services using ServiceController class, not PowerShell
         /// </summary>
@@ -132,7 +169,7 @@ namespace ProcessingAndWait.Classes
                 DisplayName = service.DisplayName,
                 ServiceStartMode = service.StartType
             }).ToList();
-            
+
             return serviceItems;
         }
     }
