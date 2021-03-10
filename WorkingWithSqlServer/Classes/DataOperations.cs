@@ -13,7 +13,9 @@ namespace WorkingWithSqlServer.Classes
             "Initial Catalog=NorthWind2020;" + 
             "Integrated Security=True";
 
-
+        public delegate void OnConnect(string message);
+        public static event OnConnect ConnectMonitor;
+        
         public static async Task<DataTableResults> ReadProductsTask(CancellationToken ct)
         {
             var result = new DataTableResults() { DataTable = new DataTable() };
@@ -21,12 +23,13 @@ namespace WorkingWithSqlServer.Classes
             return await Task.Run(async () =>
             {
                 await using var cn = new SqlConnection(_connectionString);
-                await using var cmd = new SqlCommand() { Connection = cn };
-                cmd.CommandText = SelectStatement();
+                await using var cmd = new SqlCommand {Connection = cn, CommandText = SelectStatement()};
 
                 try
                 {
+                    ConnectMonitor?.Invoke("Before open");
                     await cn.OpenAsync(ct);
+                    ConnectMonitor?.Invoke("After open");
                 }
                 catch (TaskCanceledException tce)
                 {

@@ -30,6 +30,7 @@ namespace WorkingWithSqlServer
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,11 +43,21 @@ namespace WorkingWithSqlServer
             this.dataGridView1.Size = new System.Drawing.Size(776, 323);
             this.dataGridView1.TabIndex = 1;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(12, 343);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(213, 49);
+            this.listBox1.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 354);
+            this.ClientSize = new System.Drawing.Size(800, 404);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -58,6 +69,7 @@ namespace WorkingWithSqlServer
 
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
