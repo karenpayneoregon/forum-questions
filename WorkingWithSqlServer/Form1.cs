@@ -8,6 +8,7 @@ namespace WorkingWithSqlServer
 {
     public partial class Form1 : Form
     {
+        private BindingSource _bindingSource = new BindingSource();
         /// <summary>
         /// How many seconds to wait for a successful or failed connection to open or not
         /// </summary>
@@ -56,7 +57,11 @@ namespace WorkingWithSqlServer
             }
             else
             {
-                dataGridView1.DataSource = dataResults.DataTable;
+                _bindingSource.DataSource = dataResults.DataTable;
+
+                dataGridView1.DataSource = _bindingSource;
+                ProductNameTextBox.DataBindings.Add("Text", _bindingSource, "ProductName");
+
             }
         }
     }
