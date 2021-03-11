@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -63,6 +64,20 @@ namespace WorkingWithSqlServer
                 ProductNameTextBox.DataBindings.Add("Text", _bindingSource, "ProductName");
 
             }
+        }
+
+        private void CurrentButton_Click(object sender, EventArgs e)
+        {
+            if (_bindingSource.Current is null)
+            {
+                return;
+            }
+            
+            var current = ((DataRowView) _bindingSource.Current).Row;
+            var productId = current.Field<int>("ProductID");
+            var productName = current.Field<string>("ProductName");
+
+            MessageBox.Show($"{productId}\n{productName}");
         }
     }
 }

@@ -33,6 +33,7 @@ namespace WorkingWithSqlServer
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ProductNameTextBox = new System.Windows.Forms.TextBox();
+            this.CurrentButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,11 +71,22 @@ namespace WorkingWithSqlServer
             this.ProductNameTextBox.Size = new System.Drawing.Size(283, 23);
             this.ProductNameTextBox.TabIndex = 4;
             // 
+            // CurrentButton
+            // 
+            this.CurrentButton.Location = new System.Drawing.Point(251, 232);
+            this.CurrentButton.Name = "CurrentButton";
+            this.CurrentButton.Size = new System.Drawing.Size(120, 23);
+            this.CurrentButton.TabIndex = 5;
+            this.CurrentButton.Text = "Current";
+            this.CurrentButton.UseVisualStyleBackColor = true;
+            this.CurrentButton.Click += new System.EventHandler(this.CurrentButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 404);
+            this.Controls.Add(this.CurrentButton);
             this.Controls.Add(this.ProductNameTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
@@ -93,6 +105,7 @@ namespace WorkingWithSqlServer
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox ProductNameTextBox;
+        private System.Windows.Forms.Button CurrentButton;
     }
 }
 

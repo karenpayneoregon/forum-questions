@@ -45,6 +45,10 @@ namespace WorkingWithSqlServer.Classes
 
                 result.DataTable.Load(await cmd.ExecuteReaderAsync(ct));
 
+                result.DataTable.Columns["ProductID"].ColumnMapping = MappingType.Hidden;
+                result.DataTable.Columns["SupplierID"].ColumnMapping = MappingType.Hidden;
+                result.DataTable.Columns["CategoryID"].ColumnMapping = MappingType.Hidden;
+                
                 return result;
 
             });
