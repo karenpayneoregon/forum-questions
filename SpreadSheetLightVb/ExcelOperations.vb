@@ -1,6 +1,7 @@
 ﻿Imports SpreadsheetLight
 
 Public Class ExcelOperations
+
     ''' <summary>
     ''' Export a DataTable to Excel
     ''' </summary>

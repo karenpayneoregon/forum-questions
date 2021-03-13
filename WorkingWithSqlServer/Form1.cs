@@ -79,5 +79,25 @@ namespace WorkingWithSqlServer
 
             MessageBox.Show($"{productId}\n{productName}");
         }
+
+        private int temp_barcode = 0;
+        private void InsertButton_Click(object sender, EventArgs e)
+        {
+            var (success, exception, identifier) = DataOperations1.AddToDatabase(temp_barcode,  1,1, "some name");
+            
+            if (success)
+            {
+                PrintInvoice(identifier.Value);
+            }
+            else
+            {
+                MessageBox.Show($"Insert failed\n{exception}", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PrintInvoice(int identifier)
+        {
+
+        }
     }
 }

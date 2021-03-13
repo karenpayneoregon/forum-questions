@@ -23,6 +23,9 @@ Public Class DataOperationsSqlServer
 
                     customerDataTable.Load(cmd.ExecuteReader())
 
+                    customerDataTable.Columns("CustomerIdentifier").ColumnMapping = MappingType.Hidden
+                    customerDataTable.Columns("ContactTypeIdentifier").ColumnMapping = MappingType.Hidden
+                    customerDataTable.Columns("ModifiedDate").ColumnMapping = MappingType.Hidden
 
                 Catch ex As Exception
                     LastException = ex

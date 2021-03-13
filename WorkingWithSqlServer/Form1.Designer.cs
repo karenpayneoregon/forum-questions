@@ -34,6 +34,7 @@ namespace WorkingWithSqlServer
             this.label1 = new System.Windows.Forms.Label();
             this.ProductNameTextBox = new System.Windows.Forms.TextBox();
             this.CurrentButton = new System.Windows.Forms.Button();
+            this.InsertButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,11 +82,22 @@ namespace WorkingWithSqlServer
             this.CurrentButton.UseVisualStyleBackColor = true;
             this.CurrentButton.Click += new System.EventHandler(this.CurrentButton_Click);
             // 
+            // InsertButton
+            // 
+            this.InsertButton.Location = new System.Drawing.Point(458, 292);
+            this.InsertButton.Name = "InsertButton";
+            this.InsertButton.Size = new System.Drawing.Size(75, 23);
+            this.InsertButton.TabIndex = 6;
+            this.InsertButton.Text = "button1";
+            this.InsertButton.UseVisualStyleBackColor = true;
+            this.InsertButton.Click += new System.EventHandler(this.InsertButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 404);
+            this.Controls.Add(this.InsertButton);
             this.Controls.Add(this.CurrentButton);
             this.Controls.Add(this.ProductNameTextBox);
             this.Controls.Add(this.label1);
@@ -106,6 +118,7 @@ namespace WorkingWithSqlServer
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox ProductNameTextBox;
         private System.Windows.Forms.Button CurrentButton;
+        private System.Windows.Forms.Button InsertButton;
     }
 }
 

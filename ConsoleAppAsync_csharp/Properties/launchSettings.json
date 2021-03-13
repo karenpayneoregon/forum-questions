@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "ConsoleAppAsync_csharp": {
-      "commandName": "Project",
-      "commandLineArgs": "Hello Karen"
-    }
-  }
-}

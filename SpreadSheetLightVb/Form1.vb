@@ -8,6 +8,6 @@ Public Class Form1
     Private Sub ExportToExcelButton_Click(sender As Object, e As EventArgs) Handles ExportToExcelButton.Click
         Dim dt = CType(DataGridView1.DataSource, DataTable)
         ExcelOperations.SimpleExportRaw("Customers.xlsx", "Customers", dt, True)
-
+        MessageBox.Show("Exported")
     End Sub
 End Class

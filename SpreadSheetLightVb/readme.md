@@ -11,6 +11,11 @@ Read data from SQL-Server to a DataTable then in turn sets a DataGridView.DataSo
 
 **DO NOT** generate the excel file, open it then try another export while the Exel file is open as this will generate a runtime exception.
 
+# NuGet packages used
+
+:heavy_check_mark: [SpreadsheetLight](https://www.nuget.org/packages/SpreadsheetLight/) current version
+[DocumentFormat.OpenXml](https://www.nuget.org/packages/DocumentFormat.OpenXml/) version 2.11.3
+
 # Excel operation
 
 ```csharp
