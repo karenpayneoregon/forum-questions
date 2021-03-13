@@ -14,7 +14,9 @@ Read data from SQL-Server to a DataTable then in turn sets a DataGridView.DataSo
 # NuGet packages used
 
 :heavy_check_mark: [SpreadsheetLight](https://www.nuget.org/packages/SpreadsheetLight/) current version
-[DocumentFormat.OpenXml](https://www.nuget.org/packages/DocumentFormat.OpenXml/) version 2.11.3
+
+:heavy_check_mark: [DocumentFormat.OpenXml](https://www.nuget.org/packages/DocumentFormat.OpenXml/) version 2.11.3
+
 
 # Excel operation
 
