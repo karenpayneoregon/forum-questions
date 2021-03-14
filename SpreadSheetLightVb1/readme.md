@@ -31,7 +31,7 @@ The result should be
 | id | Versions | 
 | :---- | :---- | 
 | DocumentFormat.OpenXml | {2.11.3} | 
-| SpreadsheetLight | 3.4.9 | 
+| SpreadsheetLight | (3.4.9) | 
 | System.Drawing.Common | {5.0.0} | 
 | System.IO.FileSystem.Primitives | {4.3.0} |
 | System.IO.Packaging | {4.7.0} | 
