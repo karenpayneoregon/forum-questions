@@ -39,4 +39,55 @@ Public Class ExcelOperations
         End Using
 
     End Sub
+    ''' <summary>
+    ''' Mocked code sample to load a list
+    ''' The try-catch is mainly here to ensure we don't happen
+    ''' to run this code with the file open from a prior run
+    '''
+    ''' Option Strict On
+    ''' Option Infer On
+    ''' 
+    ''' </summary>
+    ''' <returns></returns>
+    Public Shared Function CreateAndPopulate() As Boolean
+
+        Dim success = True
+        Try
+            Using doc As New SLDocument()
+
+                Dim style As New SLStyle
+
+                style.Font.Bold = True
+                doc.SetRowStyle(1, 1, style)
+
+                doc.SetCellValue("A1", "Last name")
+                doc.SetCellValue("B1", "First name")
+
+                Dim people = PeopleData.List()
+
+                Dim rowIndex = 0
+
+                For Each person In people
+                    doc.SetCellValue($"A{rowIndex + 2}", people(rowIndex).LastName)
+                    doc.SetCellValue($"B{rowIndex + 2}", people(rowIndex).FirstName)
+                    rowIndex += 1
+                Next
+
+
+                Dim stats = doc.GetWorksheetStatistics()
+
+                doc.AutoFitColumn(1, stats.EndColumnIndex)
+                doc.RenameWorksheet(SLDocument.DefaultFirstSheetName, "People")
+
+                doc.SaveAs("PeopleData.xlsx")
+
+            End Using
+        Catch ex As Exception
+            Console.WriteLine($"{ex.Message}")
+            success = False
+        End Try
+
+        Return success
+
+    End Function
 End Class

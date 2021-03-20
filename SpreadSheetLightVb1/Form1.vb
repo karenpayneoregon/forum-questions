@@ -10,4 +10,12 @@ Public Class Form1
         ExcelOperations.SimpleExportRaw("Customers.xlsx", "Customers", dt, True)
         MessageBox.Show("Exported")
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If ExcelOperations.CreateAndPopulate() Then
+            MessageBox.Show("Done")
+        Else
+            MessageBox.Show("See console window for issues")
+        End If
+    End Sub
 End Class

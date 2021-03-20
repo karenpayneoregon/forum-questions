@@ -39,7 +39,7 @@ The result should be
 
 
 
-# Excel operation
+# Import operation
 
 ```csharp
 Imports SpreadsheetLight
@@ -70,3 +70,89 @@ Public Class ExcelOperations
     End Sub
 End Class
 ```
+
+# Populate cells
+
+
+![screen](assets/S1.png)
+
+:heavy_check_mark: Data container
+
+```csharp
+Public Class Person
+    Public Property FirstName() As String
+    Public Property LastName() As String
+End Class
+```
+
+:heavy_check_mark: mocked data
+
+```csharp
+Public Class PeopleData
+    Public Shared Function List() As List(Of Person)
+        Return New List(Of Person) From {
+            New Person() With {.FirstName = "John", .LastName = "Doe"},
+            New Person() With {.FirstName = "Mary", .LastName = "Adams"},
+            New Person() With {.FirstName = "Bob", .LastName = "Wills"}}
+    End Function
+End Class
+```
+
+Code to 
+
+:heavy_check_mark: Populate sheet
+
+:heavy_check_mark: Style header row
+
+:heavy_check_mark: Auto-size columns
+
+:heavy_check_mark: Rename default sheet name
+
+:heavy_check_mark: Save to disk
+
+
+```csharp
+Public Shared Function CreateAndPopulate() As Boolean
+
+    Dim success = True
+    Try
+        Using doc As New SLDocument()
+
+            Dim style As New SLStyle
+
+            style.Font.Bold = True
+            doc.SetRowStyle(1, 1, style)
+
+            doc.SetCellValue("A1", "Last name")
+            doc.SetCellValue("B1", "First name")
+
+            Dim people = PeopleData.List()
+
+            Dim rowIndex = 0
+
+            For Each person In people
+                doc.SetCellValue($"A{rowIndex + 2}", people(rowIndex).LastName)
+                doc.SetCellValue($"B{rowIndex + 2}", people(rowIndex).FirstName)
+                rowIndex += 1
+            Next
+
+
+            Dim stats = doc.GetWorksheetStatistics()
+
+            doc.AutoFitColumn(1, stats.EndColumnIndex)
+            doc.RenameWorksheet(SLDocument.DefaultFirstSheetName, "People")
+
+            doc.SaveAs("PeopleData.xlsx")
+
+        End Using
+    Catch ex As Exception
+        Console.WriteLine($"{ex.Message}")
+        success = False
+    End Try
+
+    Return success
+
+End Function
+```
+
+
