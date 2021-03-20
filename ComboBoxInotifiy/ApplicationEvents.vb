@@ -17,6 +17,11 @@ Namespace My
     ' End Sub
 
     Partial Friend Class MyApplication
+        Sub ExampleMultilineStringLiteral()
+            Dim query = "
+SELECT * 
+FROM MyTable"
 
+        End Sub
     End Class
 End Namespace
