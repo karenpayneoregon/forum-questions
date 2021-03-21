@@ -8,7 +8,13 @@ namespace ControlLibrary
     {
         private bool _available;
         public int Id { get; set; }
+        /// <summary>
+        /// Row
+        /// </summary>
         public string Row { get; set; }
+        /// <summary>
+        /// Combine with Row property for display purposes
+        /// </summary>
         public int Number { get; set; }
         public string Seat => $"{Row}{Number}";
 

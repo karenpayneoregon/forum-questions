@@ -60,18 +60,19 @@ namespace ReservationDemo
             SqlOperations.UpdateSeat(pb.Id, pb.Available);
             UpdateStatus(pb.Id, pb.Available);
         }
+        /// <summary>
+        /// Update a seat
+        /// </summary>
+        /// <param name="identifier">Primary key Id for seat</param>
+        /// <param name="available">Availability of seat</param>
         private void UpdateStatus(int? identifier, bool? available)
         {
             listBox1.Items.Clear();
             
-            foreach (var box in _seatPictureBoxes.OrderBy(seatPictureBoxx => seatPictureBoxx.Seat))
+            foreach (var box in _seatPictureBoxes.OrderBy(seatPictureBox => seatPictureBox.Seat))
             {
                 listBox1.Items.Add($"{box.Seat} is {box.Available.ToAvailable()}");
             }
         }
-    }
-    public static class BooleanExtensions
-    {
-        public static string ToAvailable(this bool value) => value ? "Available" : "Unavailable";
     }
 }

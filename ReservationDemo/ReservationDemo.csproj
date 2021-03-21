@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\BooleanExtensions.cs" />
     <Compile Include="Classes\SeatTable.cs" />
     <Compile Include="Classes\SqlOperations.cs" />
     <Compile Include="Form1.cs">
@@ -79,6 +80,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="readme.md" />
+    <None Include="Scripts\readme.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -95,9 +97,7 @@
   <ItemGroup>
     <None Include="assets\Unavailable.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Scripts\script.sql" />
   </ItemGroup>
