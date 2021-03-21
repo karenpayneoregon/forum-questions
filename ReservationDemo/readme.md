@@ -8,6 +8,10 @@ Code sample for forum question.
 
 :yellow_circle: Data operations exception handled not done
 
+# Requires
+
+:green_circle: The following [class project](https://github.com/karenpayneoregon/forum-questions/tree/master/ControlLibrary) also in this repository.
+
 
 ![net](assets/NetVersions.png)
 
