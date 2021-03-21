@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ReservationDemo.Classes
+﻿namespace ReservationDemo.Classes
 {
     public class SeatTable
     {
@@ -12,6 +6,11 @@ namespace ReservationDemo.Classes
         public string Row { get; set; }
         public int Number { get; set; }
         public bool Available { get; set; }
+        /// <summary>
+        /// For debugging
+        /// </summary>
+        /// <returns>Id, Row, Number properties</returns>
+        public override string ToString() => $"{Id}, {Row}{Number}";
 
     }
 }

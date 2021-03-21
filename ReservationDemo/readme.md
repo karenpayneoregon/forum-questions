@@ -9,11 +9,11 @@ Code sample for forum question.
 :yellow_circle: Data operations exception handled not done
 
 
-
+![net](assets/NetVersions.png)
 
 # Control update
 
-- Added INotifyPropertyChanged for update notification
+- Added [INotifyPropertyChanged](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) for update notification
 - Added SeatTable class for interactions between form, classes and database
 
 ```csharp
@@ -47,5 +47,23 @@ namespace ControlLibrary
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
+}
+```
+
+### Container for data operations
+
+```csharp
+public class SeatTable
+{
+    public int Id { get; set; }
+    public string Row { get; set; }
+    public int Number { get; set; }
+    public bool Available { get; set; }
+    /// <summary>
+    /// For debugging
+    /// </summary>
+    /// <returns>Id, Row, Number properties</returns>
+    public override string ToString() => $"{Id}, {Row}{Number}";
+
 }
 ```
