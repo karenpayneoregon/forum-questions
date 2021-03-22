@@ -73,6 +73,16 @@ namespace ReservationDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Me {
+            get {
+                object obj = ResourceManager.GetObject("Me", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Unavailable {
             get {
                 object obj = ResourceManager.GetObject("Unavailable", resourceCulture);
