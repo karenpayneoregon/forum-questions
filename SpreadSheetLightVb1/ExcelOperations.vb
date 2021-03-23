@@ -1,4 +1,5 @@
-﻿Imports SpreadsheetLight
+﻿Imports System.IO
+Imports SpreadsheetLight
 
 Public Class ExcelOperations
 
@@ -39,6 +40,34 @@ Public Class ExcelOperations
         End Using
 
     End Sub
+    ''' <summary>
+    ''' DemoExport.xlsx
+    ''' Info_Table
+    ''' </summary>
+    ''' <param name="pFileName"></param>
+    ''' <param name="pSheetName"></param>
+    ''' <param name="pDataTable"></param>
+    ''' <param name="pColumnHeaders"></param>
+    ''' <param name="pStartRow"></param>
+    Public Shared Sub Export(pFileName As String, pSheetName As String, pDataTable As DataTable, pColumnHeaders As Boolean, Optional pStartRow As Integer = 3)
+
+        CopyFile(pFileName)
+
+        Using doc As New SLDocument()
+            doc.SelectWorksheet(pSheetName)
+            doc.ImportDataTable(pStartRow, SLConvert.ToColumnIndex("A"), pDataTable, pColumnHeaders)
+            doc.RenameWorksheet(SLDocument.DefaultFirstSheetName, pSheetName)
+            doc.SaveAs(pFileName)
+        End Using
+
+    End Sub
+    Private Shared Sub CopyFile(pFileName As String)
+        Dim originalFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ExcelFiles", pFileName)
+        Dim targetFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, pFileName)
+
+        File.Copy(originalFile, targetFile, True)
+    End Sub
+
     ''' <summary>
     ''' Mocked code sample to load a list
     ''' The try-catch is mainly here to ensure we don't happen
