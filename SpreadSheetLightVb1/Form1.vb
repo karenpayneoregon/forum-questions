@@ -25,10 +25,5 @@ Public Class Form1
         ExcelOperations.Export("DemoExport.xlsx", "Info_Table", dt, False)
         Console.WriteLine("Done")
     End Sub
-    Private Sub CopyFile()
-        Dim originalFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ExcelFiles", "DemoExport.xlsx")
-        Dim targetFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DemoExport.xlsx")
 
-        File.Copy(originalFile, targetFile, True)
-    End Sub
 End Class
