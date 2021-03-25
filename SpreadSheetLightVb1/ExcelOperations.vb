@@ -18,6 +18,7 @@ Public Class ExcelOperations
 
             doc.ImportDataTable(1, SLConvert.ToColumnIndex("A"), pDataTable, pColumnHeaders)
 
+            SLConvert.ToColumnName(1)
 
             Dim style As New SLStyle With {.FormatCode = "MM/dd//yyyy"}
 
@@ -40,6 +41,8 @@ Public Class ExcelOperations
         End Using
 
     End Sub
+    Public Delegate Sub OnErrorDelegate(exception As Exception)
+    Public Shared Event OnErrorEvent As OnErrorDelegate
     ''' <summary>
     ''' DemoExport.xlsx
     ''' Info_Table
@@ -49,16 +52,55 @@ Public Class ExcelOperations
     ''' <param name="pDataTable"></param>
     ''' <param name="pColumnHeaders"></param>
     ''' <param name="pStartRow"></param>
-    Public Shared Sub Export(pFileName As String, pSheetName As String, pDataTable As DataTable, pColumnHeaders As Boolean, Optional pStartRow As Integer = 3)
+    Public Shared Function Export(pFileName As String, pSheetName As String, pDataTable As DataTable, pColumnHeaders As Boolean, Optional pStartRow As Integer = 3) As Boolean
 
-        CopyFile(pFileName)
+        Try
+
+            CopyFile(pFileName)
+
+            Using doc As New SLDocument(pFileName)
+
+                doc.SelectWorksheet(pSheetName)
+                doc.ImportDataTable(pStartRow, SLConvert.ToColumnIndex("A"), pDataTable, pColumnHeaders)
+
+                Dim style As New SLStyle With {.FormatCode = "MM/dd//yyyy"}
+
+
+                If pDataTable.Columns.Contains("ModifiedDate") Then
+                    doc.SetColumnStyle(pDataTable.Columns("ModifiedDate").Ordinal + 1, style)
+                End If
+
+                doc.Save()
+
+                Return True
+
+            End Using
+
+        Catch ex As Exception
+            RaiseEvent OnErrorEvent(ex)
+            Return False
+        End Try
+
+    End Function
+    Public Shared Sub Export(
+         pFileName As String, 
+         pSheetName As String, 
+         pDataSet As DataSet, 
+         pTableName As String, 
+         pColumnHeaders As Boolean)
 
         Using doc As New SLDocument()
+
             doc.SelectWorksheet(pSheetName)
-            doc.ImportDataTable(pStartRow, SLConvert.ToColumnIndex("A"), pDataTable, pColumnHeaders)
+            doc.ImportDataTable(1, SLConvert.ToColumnIndex("A"), pDataSet.Tables(pTableName), pColumnHeaders)
             doc.RenameWorksheet(SLDocument.DefaultFirstSheetName, pSheetName)
             doc.SaveAs(pFileName)
+
         End Using
+
+    End Sub
+    Public Shared Sub InsertTable()
+
 
     End Sub
     Private Shared Sub CopyFile(pFileName As String)

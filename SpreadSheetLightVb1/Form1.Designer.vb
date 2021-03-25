@@ -61,7 +61,7 @@ Partial Class Form1
         Me.ExportSimpleButton.Name = "ExportSimpleButton"
         Me.ExportSimpleButton.Size = New System.Drawing.Size(75, 23)
         Me.ExportSimpleButton.TabIndex = 3
-        Me.ExportSimpleButton.Text = "Button2"
+        Me.ExportSimpleButton.Text = "Export"
         Me.ExportSimpleButton.UseVisualStyleBackColor = True
         '
         'Form1

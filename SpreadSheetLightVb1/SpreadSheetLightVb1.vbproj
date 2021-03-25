@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="DataOperationsSqlServer.vb" />
     <Compile Include="ExcelOperations.vb" />
+    <Compile Include="ExcelOperations1.vb" />
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
@@ -115,6 +116,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\ExcelFiles\DemoExport.xlsx" />
     <None Include="DemoExport.xlsx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

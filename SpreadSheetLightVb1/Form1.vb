@@ -1,9 +1,7 @@
-﻿
-Imports System.IO
-
-Public Class Form1
+﻿Public Class Form1
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         DataGridView1.DataSource = DataOperationsSqlServer.LoadCustomerRecordsUsingDataTable()
+        AddHandler ExcelOperations1.OnErrorEvent, AddressOf OnExcelExportError
     End Sub
 
     Private Sub ExportToExcelButton_Click(sender As Object, e As EventArgs) Handles ExportToExcelButton.Click
@@ -22,8 +20,11 @@ Public Class Form1
 
     Private Sub ExportSimpleButton_Click(sender As Object, e As EventArgs) Handles ExportSimpleButton.Click
         Dim dt = CType(DataGridView1.DataSource, DataTable)
-        ExcelOperations.Export("DemoExport.xlsx", "Info_Table", dt, False)
-        Console.WriteLine("Done")
+        If ExcelOperations1.Import("DemoExport.xlsx", "Info_Table", dt, False) Then
+            MessageBox.Show("Done")
+        End If
     End Sub
-
+    Private Sub OnExcelExportError(exception As Exception)
+        MessageBox.Show(exception.Message)
+    End Sub
 End Class
