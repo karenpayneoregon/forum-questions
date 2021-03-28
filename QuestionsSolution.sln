@@ -63,6 +63,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ComboPrice", "ComboPrice\Co
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ListRatherThanArrayList", "ListRatherThanArrayList\ListRatherThanArrayList.vbproj", "{F48AFEDF-1BA2-4888-B0DA-1CE3AE70C679}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CustomCurrencyLabelDemo", "WindowsApp1\CustomCurrencyLabelDemo.vbproj", "{59A449D3-187C-49B8-AFAE-A337B65CA826}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -246,6 +248,14 @@ Global
 		{F48AFEDF-1BA2-4888-B0DA-1CE3AE70C679}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F48AFEDF-1BA2-4888-B0DA-1CE3AE70C679}.Release|x86.ActiveCfg = Release|Any CPU
 		{F48AFEDF-1BA2-4888-B0DA-1CE3AE70C679}.Release|x86.Build.0 = Release|Any CPU
+		{59A449D3-187C-49B8-AFAE-A337B65CA826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A449D3-187C-49B8-AFAE-A337B65CA826}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A449D3-187C-49B8-AFAE-A337B65CA826}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{59A449D3-187C-49B8-AFAE-A337B65CA826}.Debug|x86.Build.0 = Debug|Any CPU
+		{59A449D3-187C-49B8-AFAE-A337B65CA826}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A449D3-187C-49B8-AFAE-A337B65CA826}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59A449D3-187C-49B8-AFAE-A337B65CA826}.Release|x86.ActiveCfg = Release|Any CPU
+		{59A449D3-187C-49B8-AFAE-A337B65CA826}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -273,6 +283,7 @@ Global
 		{6AEDD65A-1A63-4FF3-B0FB-7F40E0842326} = {2CBB60B9-2916-4D4F-AEFF-537218423BDB}
 		{7BF522DA-8357-4671-906A-5B061BBE7B44} = {62CF45BA-2347-4541-98F5-36B0F557F038}
 		{F48AFEDF-1BA2-4888-B0DA-1CE3AE70C679} = {EAD7EE62-2E71-4E6F-B930-08178B4B7E2E}
+		{59A449D3-187C-49B8-AFAE-A337B65CA826} = {EAD7EE62-2E71-4E6F-B930-08178B4B7E2E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {43534856-35B6-4101-93D8-EA33E89058B9}

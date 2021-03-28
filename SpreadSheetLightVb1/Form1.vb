@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports System.ComponentModel
+
+Public Class Form1
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         DataGridView1.DataSource = DataOperationsSqlServer.LoadCustomerRecordsUsingDataTable()
         AddHandler ExcelOperations1.OnErrorEvent, AddressOf OnExcelExportError
