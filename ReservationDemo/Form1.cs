@@ -16,9 +16,12 @@ namespace ReservationDemo
             InitializeComponent();
 
             Prepare();
+            
+
 
             UpdateStatus(null,null);
         }
+
 
         private void Prepare()
         {

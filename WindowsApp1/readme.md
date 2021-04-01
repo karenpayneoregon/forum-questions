@@ -1,5 +1,7 @@
 ﻿# About
 
+[Forum question](https://docs.microsoft.com/en-us/answers/questions/334501/labeltext-to-34c34-help.html)
+
 Simple code sample for a custom label which by invoking one of the overloaded SetDoubleValue
 in tanget with setting DoubleFormat property formats the label text property.
 
