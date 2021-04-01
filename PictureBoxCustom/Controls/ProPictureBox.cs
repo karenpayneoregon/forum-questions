@@ -28,7 +28,7 @@ public class ProPictureBox : PictureBox
 
     private ProTransformation FixTranslation(ProTransformation value)
     {
-            
+
         var maxScale = Math.Max((double)Image.Width / ClientRectangle.Width, (double)Image.Height / ClientRectangle.Height);
         if (value.Scale > maxScale)
         {
@@ -48,7 +48,7 @@ public class ProPictureBox : PictureBox
         {
             value = value.SetTranslate(new Point(Math.Max(value.Translation.X, 0), Math.Max(value.Translation.Y, 0)));
         }
-        
+
         return value;
     }
 
@@ -68,14 +68,14 @@ public class ProPictureBox : PictureBox
         {
             return;
         }
-        
+
         var transformation = _transformation;
         var pos1 = transformation.ConvertToIm(e.Location);
-		
-        transformation = e.Delta > 0 ? 
-            transformation.SetScale(Transformation.Scale / 1.25) : 
+
+        transformation = e.Delta > 0 ?
+            transformation.SetScale(Transformation.Scale / 1.25) :
             transformation.SetScale(Transformation.Scale * 1.25);
-        
+
         var pos2 = transformation.ConvertToIm(e.Location);
         transformation = transformation.AddTranslate(pos1 - (Size)pos2);
         Transformation = transformation;
@@ -103,9 +103,9 @@ public class ProPictureBox : PictureBox
         {
             return;
         }
-        
+
         Focus();
-        
+
         _clickedPoint = _transformation.ConvertToIm(e.Location);
     }
 
@@ -115,7 +115,7 @@ public class ProPictureBox : PictureBox
         {
             return;
         }
-        
+
         var imRect = Transformation.ConvertToIm(ClientRectangle);
         e.Graphics.DrawImage(Image, ClientRectangle, imRect, GraphicsUnit.Pixel);
     }
