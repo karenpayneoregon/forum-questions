@@ -39,7 +39,6 @@ namespace ManagerUnitTestProject
         }
         private void OnProcessingCompletedEvent(WhatEver sender)
         {
-            var startCount = sender.StartLockDownCount;
             StarterValue = sender.StartLockDownCount;
             EnderValue = sender.EndLockDownCount;
         }
