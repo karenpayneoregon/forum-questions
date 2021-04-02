@@ -69,7 +69,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureBoxCustom", "Picture
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifyChangeProgressBar", "NotifyChangeProgressBar\NotifyChangeProgressBar.csproj", "{5621322A-A940-43B8-9E41-D4ABA2370D2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureBoxCustomCore", "PictureBoxCustomCore\PictureBoxCustomCore.csproj", "{A1342CF6-1794-41D6-B7ED-83114959F739}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PictureBoxCustomCore", "PictureBoxCustomCore\PictureBoxCustomCore.csproj", "{A1342CF6-1794-41D6-B7ED-83114959F739}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit test", "Unit test", "{02C61194-8C96-4D37-89E8-9F9A41900322}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerLibrary", "ManagerLibrary\ManagerLibrary.csproj", "{3E1EFCA9-71D0-4726-BCC7-8FCF2A71D9E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerUnitTestProject", "ManagerUnitTestProject\ManagerUnitTestProject.csproj", "{C9CC3F86-B495-44D7-8438-0FE7ABF10413}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -286,6 +292,22 @@ Global
 		{A1342CF6-1794-41D6-B7ED-83114959F739}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A1342CF6-1794-41D6-B7ED-83114959F739}.Release|x86.ActiveCfg = Release|Any CPU
 		{A1342CF6-1794-41D6-B7ED-83114959F739}.Release|x86.Build.0 = Release|Any CPU
+		{3E1EFCA9-71D0-4726-BCC7-8FCF2A71D9E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E1EFCA9-71D0-4726-BCC7-8FCF2A71D9E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E1EFCA9-71D0-4726-BCC7-8FCF2A71D9E9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3E1EFCA9-71D0-4726-BCC7-8FCF2A71D9E9}.Debug|x86.Build.0 = Debug|Any CPU
+		{3E1EFCA9-71D0-4726-BCC7-8FCF2A71D9E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E1EFCA9-71D0-4726-BCC7-8FCF2A71D9E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E1EFCA9-71D0-4726-BCC7-8FCF2A71D9E9}.Release|x86.ActiveCfg = Release|Any CPU
+		{3E1EFCA9-71D0-4726-BCC7-8FCF2A71D9E9}.Release|x86.Build.0 = Release|Any CPU
+		{C9CC3F86-B495-44D7-8438-0FE7ABF10413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9CC3F86-B495-44D7-8438-0FE7ABF10413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9CC3F86-B495-44D7-8438-0FE7ABF10413}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C9CC3F86-B495-44D7-8438-0FE7ABF10413}.Debug|x86.Build.0 = Debug|Any CPU
+		{C9CC3F86-B495-44D7-8438-0FE7ABF10413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9CC3F86-B495-44D7-8438-0FE7ABF10413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9CC3F86-B495-44D7-8438-0FE7ABF10413}.Release|x86.ActiveCfg = Release|Any CPU
+		{C9CC3F86-B495-44D7-8438-0FE7ABF10413}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -317,6 +339,8 @@ Global
 		{23AC3B42-AC4A-43E8-B3A0-ABF6B030C2A5} = {62CF45BA-2347-4541-98F5-36B0F557F038}
 		{5621322A-A940-43B8-9E41-D4ABA2370D2F} = {62CF45BA-2347-4541-98F5-36B0F557F038}
 		{A1342CF6-1794-41D6-B7ED-83114959F739} = {62CF45BA-2347-4541-98F5-36B0F557F038}
+		{3E1EFCA9-71D0-4726-BCC7-8FCF2A71D9E9} = {62CF45BA-2347-4541-98F5-36B0F557F038}
+		{C9CC3F86-B495-44D7-8438-0FE7ABF10413} = {02C61194-8C96-4D37-89E8-9F9A41900322}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {43534856-35B6-4101-93D8-EA33E89058B9}
