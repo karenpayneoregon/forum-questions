@@ -29,6 +29,7 @@ namespace ManagerUnitTestProject
             TestResults = new List<TestContext>();
         }
         [TestMethod]
+        [TestTraits(Trait.DelegatesEvents)]
         public void TestMethod1()
         {
             var example = new Example() {StartValue = 1, EndValue = 10};
