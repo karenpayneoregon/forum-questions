@@ -138,11 +138,13 @@ namespace DataGridViewCombo1
 
             #region Get child table information
 
+            // ReSharper disable once AssignNullToNotNullAttribute
             var vendorName = ((DataTable)_vendorBindingSource.DataSource)
                 .AsEnumerable()
                 .FirstOrDefault(row => row.Field<int>("VendorId") == vendorKey)
                 .Field<string>("VendorName");
 
+            // ReSharper disable once AssignNullToNotNullAttribute
             var colorName = ((DataTable)_colorBindingSource.DataSource)
                 .AsEnumerable()
                 .FirstOrDefault(row => row.Field<int>("ColorId") == colorKey)
