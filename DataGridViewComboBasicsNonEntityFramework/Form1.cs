@@ -154,6 +154,7 @@ namespace DataGridViewCombo1
 
 
             DisplayInformationTextBox.Text =
+                // ReSharper disable once LocalizableElement
                 $"PK: {customerPrimaryKey} Vendor key {vendorKey} vendor: {vendorName} color id: {colorKey} - {colorName}";
         }
     }
