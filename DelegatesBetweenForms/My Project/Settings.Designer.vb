@@ -64,9 +64,9 @@ Namespace My
     Friend Module MySettingsProperty
 
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")> _
-        Friend ReadOnly Property Settings() As Global.ListRatherThanArrayList.My.MySettings
+        Friend ReadOnly Property Settings() As Global.DelegatesBetweenForms.My.MySettings
             Get
-                Return Global.ListRatherThanArrayList.My.MySettings.Default
+                Return Global.DelegatesBetweenForms.My.MySettings.Default
             End Get
         End Property
     End Module
