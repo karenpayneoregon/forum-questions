@@ -82,7 +82,7 @@ Namespace Classes
                 sb.AppendLine(product.Lines)
             Next
 
-            File.WriteAllText("AllProducts.txt", sb.ToString())
+            File.WriteAllText(fileName, sb.ToString())
 
         End Sub
 

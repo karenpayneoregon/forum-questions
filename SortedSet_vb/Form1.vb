@@ -1,5 +1,4 @@
-﻿Imports Microsoft.VisualBasic.FileIO
-Imports SortedSet_vb.Classes
+﻿Imports SortedSet_vb.Classes
 
 ''' <summary>
 ''' * In this code sample exceptions are written to the console for debug purposes.
@@ -39,13 +38,11 @@ Public Class Form1
         ExportListButton.Enabled = False
     End Sub
 
-    Private Sub MalFormExceptionWhileReadingFile(exception As MalformedLineException, fileName As String)
-        ' write exception reading a line
+    Private Sub MalFormExceptionWhileReadingFile(exception As Microsoft.VisualBasic.FileIO.MalformedLineException, fileName As String)
         Console.WriteLine($"Read error on line {exception.LineNumber} with file {fileName}")
     End Sub
 
     Private Sub GeneralExceptionWhileReadingFile(exception As Exception, fileName As String)
-        ' write general exceptions
         Console.WriteLine($"General error: {exception.Message}  with file {fileName}")
     End Sub
 End Class
