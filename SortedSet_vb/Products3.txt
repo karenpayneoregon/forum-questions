@@ -1,0 +1,11 @@
+﻿1,Chai,1,Beverages
+2,Chang,1,Beverages
+3x,Aniseed Syrup,2,Condiments
+4,Chef Anton's Cajun Seasoning,2,Condiments
+5,Chef Anton's Gumbo Mix,2,Condiments
+6,Grandma's Boysenberry Spread,2,Condiments
+7,Uncle Bob's Organic Dried Pears,7,Produce
+
+8,Northwoods Cranberry Sauce,,Condiments
+9,Mishi Kobe Niku,6,Meat/Poultry
+11,Dummy,8,Seafood
