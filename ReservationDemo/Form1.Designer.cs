@@ -39,6 +39,7 @@ namespace ReservationDemo
             this.seatPictureBox3 = new ControlLibrary.SeatPictureBox();
             this.seatPictureBox2 = new ControlLibrary.SeatPictureBox();
             this.seatPictureBox1 = new ControlLibrary.SeatPictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.seatPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seatPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seatPictureBox2)).BeginInit();
@@ -130,11 +131,22 @@ namespace ReservationDemo
             this.seatPictureBox1.TabIndex = 0;
             this.seatPictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(23, 415);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.runButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(697, 482);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
@@ -164,6 +176,7 @@ namespace ReservationDemo
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
