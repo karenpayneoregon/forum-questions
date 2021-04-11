@@ -29,4 +29,9 @@ Public Class Form1
     Private Sub OnExcelExportError(exception As Exception)
         MessageBox.Show(exception.Message)
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        ExcelOperations2.SimpleWrite("SimpleWriteExample.xlsx", "Karen", "Payne", "Wrote this")
+        MessageBox.Show("Done")
+    End Sub
 End Class

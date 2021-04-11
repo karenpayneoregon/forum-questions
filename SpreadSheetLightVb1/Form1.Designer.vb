@@ -26,6 +26,7 @@ Partial Class Form1
         Me.ExportToExcelButton = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ExportSimpleButton = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -64,11 +65,21 @@ Partial Class Form1
         Me.ExportSimpleButton.Text = "Export"
         Me.ExportSimpleButton.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(425, 251)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 4
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(897, 284)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.ExportSimpleButton)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ExportToExcelButton)
@@ -86,4 +97,5 @@ Partial Class Form1
     Friend WithEvents ExportToExcelButton As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents ExportSimpleButton As Button
+    Friend WithEvents Button2 As Button
 End Class

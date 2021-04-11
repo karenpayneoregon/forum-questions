@@ -12,10 +12,7 @@ Public Class ExcelOperations1
     ''' <param name="pDataTable">DataTable</param>
     ''' <param name="pColumnHeaders">Use column name from DataTable as headers</param>
     ''' <param name="pStartRow">Row to start the import</param>
-    Public Shared Function Import(
-          pFileName As String, pSheetName As String,
-          pDataTable As DataTable, pColumnHeaders As Boolean,
-          Optional pStartRow As Integer = 3) As Boolean
+    Public Shared Function Import(pFileName As String, pSheetName As String, pDataTable As DataTable, pColumnHeaders As Boolean, Optional pStartRow As Integer = 3) As Boolean
 
         Try
 

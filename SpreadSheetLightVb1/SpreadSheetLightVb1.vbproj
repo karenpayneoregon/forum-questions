@@ -82,6 +82,7 @@
     <Compile Include="DataOperationsSqlServer.vb" />
     <Compile Include="ExcelOperations.vb" />
     <Compile Include="ExcelOperations1.vb" />
+    <Compile Include="ExcelOperations2.vb" />
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
@@ -132,6 +133,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="readme.md" />
+    <None Include="SimpleWriteExample.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="script.sql" />

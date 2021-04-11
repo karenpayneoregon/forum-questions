@@ -161,4 +161,76 @@ Public Class ExcelOperations
         Return success
 
     End Function
+
+    ''' <summary>
+    ''' Writes three values to the default worksheet
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    ''' <param name="value1"></param>
+    ''' <param name="value2"></param>
+    ''' <param name="value3"></param>
+    Public Shared Sub SimpleWrite(fileName As String, value1 As String, value2 As String, value3 As String)
+
+        If Not File.Exists(fileName) Then
+            Throw New FileNotFoundException($"Dude failed to find {fileName}")
+        End If
+
+        If Not String.IsNullOrWhiteSpace(value1) AndAlso Not String.IsNullOrWhiteSpace(value2) AndAlso Not String.IsNullOrWhiteSpace(value3) Then
+
+            Try
+
+                Using doc As New SLDocument(fileName)
+
+                    doc.SetCellValue($"{SLConvert.ToColumnName(1)}2", value1)
+                    doc.SetCellValue($"{SLConvert.ToColumnName(1)}3", value2)
+                    doc.SetCellValue($"{SLConvert.ToColumnName(1)}4", value3)
+
+                    doc.Save()
+
+                End Using
+            Catch ex As Exception
+                Console.WriteLine(ex.Message)
+            End Try
+
+        Else
+            Console.WriteLine("Missing one or more values")
+        End If
+
+    End Sub
+    Public Shared Sub SimpleWrite(fileName As String, workSheetName As String, value1 As String, value2 As String, value3 As String)
+
+        If Not File.Exists(fileName) Then
+            Throw New FileNotFoundException($"Dude failed to find {fileName}")
+        End If
+
+        If Not String.IsNullOrWhiteSpace(value1) AndAlso Not String.IsNullOrWhiteSpace(value2) AndAlso Not String.IsNullOrWhiteSpace(value3) Then
+
+            Try
+
+                Using doc As New SLDocument(fileName)
+
+                    If SheetExists(doc, workSheetName) Then
+                        doc.SelectWorksheet(workSheetName)
+                    End If
+
+
+                    doc.SetCellValue($"{SLConvert.ToColumnName(1)}2", value1)
+                    doc.SetCellValue($"{SLConvert.ToColumnName(1)}3", value2)
+                    doc.SetCellValue($"{SLConvert.ToColumnName(1)}4", value3)
+
+                    doc.Save()
+
+                End Using
+            Catch ex As Exception
+                Console.WriteLine(ex.Message)
+            End Try
+
+        Else
+            Console.WriteLine("Missing one or more values")
+        End If
+
+    End Sub
+    Public Shared Function SheetExists(doc As SLDocument, pSheetName As String) As Boolean
+        Return doc.GetSheetNames(False).Any(Function(sheetName) sheetName.ToLower() = pSheetName.ToLower())
+    End Function
 End Class
