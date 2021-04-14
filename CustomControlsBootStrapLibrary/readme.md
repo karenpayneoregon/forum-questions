@@ -21,7 +21,7 @@ This is a work in progress, but here is a library that I've been working on that
 [Source](https://github.com/karenpayneoregon/forum-questions/blob/master/CustomControlsBootStrapLibrary/Classes/Control.cs#L394)
 
 - `IsOutline` - Allows the button to just contain a border
-- `MouseOver`, `MouseEnter`, and Disabled styles the button
+- `MouseOver`, `MouseEnter`, and `Disabled styles` the button
 
 
 
