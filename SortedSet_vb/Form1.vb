@@ -45,4 +45,27 @@ Public Class Form1
     Private Sub GeneralExceptionWhileReadingFile(exception As Exception, fileName As String)
         Console.WriteLine($"General error: {exception.Message}  with file {fileName}")
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim value As Double = 0
+        If Double.TryParse(lblTotal.Text, value) Then
+            lblTotal.Text = $"{value.ToString("c")}"
+        Else
+            lblTotal.Text = "Invalid value"
+        End If
+    End Sub
+End Class
+Public Class CurrencyLabel
+    Inherits Label
+    Public ReadOnly Property AsCurrent() As String
+        Get
+            Dim value As Double = 0
+            If Double.TryParse(Text, value) Then
+                Text = $"{value.ToString("c")}"
+            End If
+
+            Return Text
+
+        End Get
+    End Property
 End Class

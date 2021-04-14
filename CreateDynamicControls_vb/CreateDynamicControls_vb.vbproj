@@ -73,10 +73,19 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonPictureBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\ButtonInitialization.vb" />
     <Compile Include="Classes\StringExtensions.vb" />
     <Compile Include="Controls\DataButton.vb">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExampleForm.Designer.vb">
+      <DependentUpon>ExampleForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleForm.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -90,6 +99,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -104,6 +114,9 @@
     <Compile Include="Classes\ButtonOperations.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ExampleForm.resx">
+      <DependentUpon>ExampleForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +139,12 @@
     </None>
     <None Include="App.config" />
     <None Include="readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Miata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anyplatform.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
