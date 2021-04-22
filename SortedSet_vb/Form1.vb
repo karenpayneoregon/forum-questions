@@ -1,4 +1,5 @@
-﻿Imports SortedSet_vb.Classes
+﻿Imports System.Net
+Imports SortedSet_vb.Classes
 
 ''' <summary>
 ''' * In this code sample exceptions are written to the console for debug purposes.
@@ -47,12 +48,15 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim value As Double = 0
-        If Double.TryParse(lblTotal.Text, value) Then
-            lblTotal.Text = $"{value.ToString("c")}"
-        Else
-            lblTotal.Text = "Invalid value"
-        End If
+
+        Dim externalIpString As String = New WebClient().
+                DownloadString("http://icanhazip.com").
+                Replace("\r\n", "").Replace("\n", "").
+                Trim()
+
+        Dim externalIp = IPAddress.Parse(externalIpString)
+        MessageBox.Show(externalIp.ToString())
+
     End Sub
 End Class
 Public Class CurrencyLabel

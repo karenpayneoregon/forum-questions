@@ -86,5 +86,11 @@ namespace PropertyGridConverterExample1
                 MessageBox.Show(@"Invalid address");
             }
         }
+
+        private void GetButton_Click(object sender, EventArgs e)
+        {
+            var current = (Item) propertyGrid.SelectedObject;
+            Console.WriteLine();
+        }
     }
 }

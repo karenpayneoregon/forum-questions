@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System;
 using System.IO;
+using System.Net;
 using SpreadsheetLight;
 
 namespace SpreadSheetLight1
@@ -12,24 +13,29 @@ namespace SpreadSheetLight1
     {
         static void Main(string[] args)
         {
-            try
-            {
-                using (var doc = new SLDocument())
-                {
-                    Console.WriteLine($"Create {ExcelFileName}");
-                    doc.SaveAs(ExcelFileName);
-                    Console.WriteLine("Excel file created");
+            string externalIpString = new WebClient().DownloadString("http://icanhazip.com").Replace("\\r\\n", "").Replace("\\n", "").Trim();
+            var externalIp = IPAddress.Parse(externalIpString);
 
-                }
-            }
-            catch (UnauthorizedAccessException)
-            {
-                Console.WriteLine($"Access denied to: {ExcelFileName}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            Console.WriteLine(externalIp.ToString());
+            
+            //try
+            //{
+            //    using (var doc = new SLDocument())
+            //    {
+            //        Console.WriteLine($"Create {ExcelFileName}");
+            //        doc.SaveAs(ExcelFileName);
+            //        Console.WriteLine("Excel file created");
+
+            //    }
+            //}
+            //catch (UnauthorizedAccessException)
+            //{
+            //    Console.WriteLine($"Access denied to: {ExcelFileName}");
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
 
             Console.ReadLine();
         }
