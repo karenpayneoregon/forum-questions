@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.SqlClient;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YieldIAsyncEnumerable.Classes;
 
 /*
  * IAsyncEnumerable<T> Interface
@@ -80,84 +77,6 @@ namespace YieldIAsyncEnumerable
             {
                 listBox2.InvokeIfRequired(lb => { listBox2.Items.Add(name);});
             }
-        }
-    }
-
-    public class GlobalStuff
-    {
-        public static readonly TimeSpan TimeSpan = new(0, 0, 0, 0, 1);
-        public static int MaxNumber = 100;
-        public static int TimeOutSeconds = 5;
-    }
-
-    public static class Experimenting
-    {
-        public static async IAsyncEnumerable<int> RangeAsync(this int start, int count, [EnumeratorCancellation] CancellationToken cancellationToken = default)
-        {
-
-            for (int index = 0; index < count; index++)
-            {
-                if (cancellationToken.IsCancellationRequested) cancellationToken.ThrowIfCancellationRequested();
-                await Task.Delay(GlobalStuff.TimeSpan, cancellationToken);
-                yield return start + index;
-            }
-        }
-        public static void InvokeIfRequired<T>(this T control, Action<T> action) where T : ISynchronizeInvoke
-        {
-            if (control.InvokeRequired)
-            {
-                control.Invoke(new Action(() => action(control)), null);
-            }
-            else
-            {
-                action(control);
-            }
-        }
-    }
-
-    public class Helper
-    {
-        public static async IAsyncEnumerable<int> RangeAsync(int divider, int maxNumber)
-        {
-            for (var index = 0; index < maxNumber; index++)
-            {
-                if (index % divider == 0)
-                {
-                    await Task.Delay(GlobalStuff.TimeSpan);
-                    yield return index;
-                }
-            }
-        }
-    }
-
-    public class DataOperations
-    {
-        private static readonly string _connectionString = 
-            @"Data Source=.\sqlexpress;Initial Catalog=NorthWind2020;Integrated Security=True";
-
-        private static string _selectStatement = 
-            "SELECT FirstName + ' ' + LastName As FullName FROM dbo.Contacts ORDER BY LastName;";
-        
-        public static async IAsyncEnumerable<string> GetAllNames(bool delay)
-        {
-            
-            await using var cn = new SqlConnection(_connectionString);
-            await using var cmd = new SqlCommand { Connection = cn, CommandText = _selectStatement };
-
-            await cn.OpenAsync(new CancellationTokenSource(TimeSpan.FromSeconds(GlobalStuff.TimeOutSeconds)).Token);
-            await using var reader = await cmd.ExecuteReaderAsync();
-
-            while (reader.Read())
-            {
-                
-                if (delay)
-                {
-                    await Task.Delay(GlobalStuff.TimeSpan);
-                }
-                
-                yield return reader.GetString(0);
-            }
-
         }
     }
 }
