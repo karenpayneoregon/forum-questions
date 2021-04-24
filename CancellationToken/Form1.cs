@@ -17,7 +17,27 @@ namespace CancellationToken
             InitializeComponent();
 
             progressBar1.Maximum = _totalIterations;
+            Operations.OnAddItem += OperationsOnOnAddItem;
 
+            comboBox1.DataSource = _bindingSource;
+            Shown += OnShown;
+            
+        }
+
+        private async void OnShown(object sender, EventArgs e)
+        {
+
+            await Operations.Load(1000);
+
+            comboBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+        }
+
+        private BindingSource _bindingSource = new BindingSource();
+        private void OperationsOnOnAddItem(string item)
+        {
+            _bindingSource.Add(item);
         }
 
 
@@ -101,11 +121,6 @@ namespace CancellationToken
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private static void Demo()
         {
 
         }

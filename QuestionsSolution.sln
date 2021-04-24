@@ -79,6 +79,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyGridSqlServer", "Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleJsonExample1", "SimpleJsonExample\SimpleJsonExample1.csproj", "{53BF9165-5551-4345-84C1-82656F28164F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YieldIAsyncEnumerable", "AsyncExperiments\YieldIAsyncEnumerable.csproj", "{C7E7DED4-E810-4A37-8CF5-02ECF5C46F01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -311,6 +313,14 @@ Global
 		{53BF9165-5551-4345-84C1-82656F28164F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{53BF9165-5551-4345-84C1-82656F28164F}.Release|x86.ActiveCfg = Release|Any CPU
 		{53BF9165-5551-4345-84C1-82656F28164F}.Release|x86.Build.0 = Release|Any CPU
+		{C7E7DED4-E810-4A37-8CF5-02ECF5C46F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7E7DED4-E810-4A37-8CF5-02ECF5C46F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7E7DED4-E810-4A37-8CF5-02ECF5C46F01}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C7E7DED4-E810-4A37-8CF5-02ECF5C46F01}.Debug|x86.Build.0 = Debug|Any CPU
+		{C7E7DED4-E810-4A37-8CF5-02ECF5C46F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E7DED4-E810-4A37-8CF5-02ECF5C46F01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7E7DED4-E810-4A37-8CF5-02ECF5C46F01}.Release|x86.ActiveCfg = Release|Any CPU
+		{C7E7DED4-E810-4A37-8CF5-02ECF5C46F01}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -344,6 +354,7 @@ Global
 		{F994F156-A804-4CF3-BC49-8BE9C8D464A2} = {6BAF4E98-A9EB-4EAF-A86E-ACDBF5E9DAC5}
 		{0FCD4AC8-CEDC-403F-B339-47CE45A7276C} = {2CBB60B9-2916-4D4F-AEFF-537218423BDB}
 		{53BF9165-5551-4345-84C1-82656F28164F} = {62CF45BA-2347-4541-98F5-36B0F557F038}
+		{C7E7DED4-E810-4A37-8CF5-02ECF5C46F01} = {2CBB60B9-2916-4D4F-AEFF-537218423BDB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {43534856-35B6-4101-93D8-EA33E89058B9}
