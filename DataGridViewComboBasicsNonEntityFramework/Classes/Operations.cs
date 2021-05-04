@@ -6,7 +6,7 @@ namespace DataGridViewCombo1.Classes
     public class Operations
     {
         /*
-         * Make sure the databasescript file is executed and that the
+         * Make sure the database script file is executed and that the
          * Data Source points to the correct server if not SQL-Server Express.
          */
         private string ConnectionString = "Data Source=.\\sqlexpress;Initial " +

@@ -1,0 +1,250 @@
+﻿{
+  "general": {
+    "version": 3,
+    "reload": 1,
+    "update": "20210429173631",
+    "update_timestamp": "2021-04-29T17:36:31.7774251Z",
+    "connected_clients": 1087,
+    "unique_users": 1029
+  },
+  "pilots": [
+    {
+      "cid": 1223456,
+      "name": "Frank Smith",
+      "callsign": "ASA001",
+      "server": "UK-1",
+      "pilot_rating": 0,
+      "latitude": 45.59057,
+      "longitude": -122.5972,
+      "altitude": 31,
+      "groundspeed": 11,
+      "transponder": "1501",
+      "heading": 119,
+      "qnh_i_hg": 30.24,
+      "qnh_mb": 1024,
+      "flight_plan": {
+        "flight_rules": "I",
+        "aircraft": "A320/L",
+        "aircraft_faa": "A320/L",
+        "aircraft_short": "A320",
+        "departure": "KSAN",
+        "arrival": "KPDX",
+        "alternate": "KSEA",
+        "cruise_tas": "445",
+        "altitude": "36000",
+        "deptime": "1510",
+        "enroute_time": "0211",
+        "fuel_time": "0328",
+        "remarks": "PBN/A1B1C1D1O1S1 DOF/210429 REG/N625VA EET/KZOA0037 KZSE0120 OPR/ASA RMK/TCAS SIMBRIEF /V/",
+        "route": "PADRZ2 EHF J5 FMG J92 LMT GALLO TMBRS2",
+        "revision_id": 1
+      },
+      "logon_time": "2021-04-29T15:43:52.3955569Z",
+      "last_updated": "2021-04-29T17:36:31.1795763Z"
+    },
+    {
+      "cid": 2182955,
+      "name": "John Smith CYUL",
+      "callsign": "CXA106",
+      "server": "CANADA",
+      "pilot_rating": 0,
+      "latitude": 3.89123,
+      "longitude": 82.7544,
+      "altitude": 39879,
+      "groundspeed": 503,
+      "transponder": "2200",
+      "heading": 318,
+      "qnh_i_hg": 29.8,
+      "qnh_mb": 1009,
+      "flight_plan": {
+        "flight_rules": "I",
+        "aircraft": "H/B78X/L",
+        "aircraft_faa": "H/B78X/L",
+        "aircraft_short": "B78X",
+        "departure": "YPPH",
+        "arrival": "VIDP",
+        "alternate": "OPST",
+        "cruise_tas": "499",
+        "altitude": "34000",
+        "deptime": "1130",
+        "enroute_time": "0933",
+        "fuel_time": "1141",
+        "remarks": "PBN/A1B1C1D1L1O1S2 DOF/210429 REG/CCXCB EET/VCCF0518 VOMF0704 VABF0813 VIDF0854 SEL/CXCB OPR/CXA PER/D RALT/WIII VCBI RMK/TCAS SIMBRIEF /T/",
+        "route": "KEELS T12 MERIB M641 IKASA/N0500F360 M641 RUXER/N0495F380 M641 KAT/N0498F370 A465 MMV/N0495F380 Q24 BAVOX BAVOX5A",
+        "revision_id": 0
+      },
+      "logon_time": "2021-04-29T15:43:52.396407Z",
+      "last_updated": "2021-04-29T17:36:28.4532693Z"
+    },
+    {
+      "cid": 1205454,
+      "name": "Bill Miller CYOW",
+      "callsign": "SIA2015",
+      "server": "USA-EAST",
+      "pilot_rating": 1,
+      "latitude": 43.4906,
+      "longitude": 132.10117,
+      "altitude": 8248,
+      "groundspeed": 236,
+      "transponder": "2200",
+      "heading": 87,
+      "qnh_i_hg": 29.71,
+      "qnh_mb": 1006,
+      "flight_plan": {
+        "flight_rules": "I",
+        "aircraft": "H/B744/L",
+        "aircraft_faa": "H/B744/L",
+        "aircraft_short": "B744",
+        "departure": "UHWW",
+        "arrival": "RJAA",
+        "alternate": "RJGG",
+        "cruise_tas": "490",
+        "altitude": "35000",
+        "deptime": "0000",
+        "enroute_time": "0000",
+        "fuel_time": "0000",
+        "remarks": "PBN/A1B1D1O1S2 DOF/210429 REG/N487SB EET/RJJJ0033 OPR/SIA PER/D RMK/TCAS /V/",
+        "route": "PERAS5 PERAS A723 ARLAS B451 IGROD Y304 GUGBI Y30 SWAMP SWAMPT",
+        "revision_id": 1
+      },
+      "logon_time": "2021-04-29T15:43:52.4699149Z",
+      "last_updated": "2021-04-29T17:36:31.2559913Z"
+    }
+  ],
+  "facilities": [
+    {
+      "id": 0,
+      "short": "OBS",
+      "long": "Observer"
+    },
+    {
+      "id": 1,
+      "short": "FSS",
+      "long": "Flight Service Station"
+    },
+    {
+      "id": 2,
+      "short": "DEL",
+      "long": "Clearance Delivery"
+    },
+    {
+      "id": 3,
+      "short": "GND",
+      "long": "Ground"
+    },
+    {
+      "id": 4,
+      "short": "TWR",
+      "long": "Tower"
+    },
+    {
+      "id": 5,
+      "short": "APP",
+      "long": "Approach/Departure"
+    },
+    {
+      "id": 6,
+      "short": "CTR",
+      "long": "Enroute"
+    }
+  ],
+  "ratings": [
+    {
+      "id": -1,
+      "short": "INAC",
+      "long": "Inactive"
+    },
+    {
+      "id": 0,
+      "short": "SUS",
+      "long": "Suspended"
+    },
+    {
+      "id": 1,
+      "short": "OBS",
+      "long": "Observer"
+    },
+    {
+      "id": 2,
+      "short": "S1",
+      "long": "Tower Trainee"
+    },
+    {
+      "id": 3,
+      "short": "S2",
+      "long": "Tower Controller"
+    },
+    {
+      "id": 4,
+      "short": "S3",
+      "long": "Senior Student"
+    },
+    {
+      "id": 5,
+      "short": "C1",
+      "long": "Enroute Controller"
+    },
+    {
+      "id": 6,
+      "short": "C2",
+      "long": "Controller 2 (not in use)"
+    },
+    {
+      "id": 7,
+      "short": "C3",
+      "long": "Senior Controller"
+    },
+    {
+      "id": 8,
+      "short": "I1",
+      "long": "Instructor"
+    },
+    {
+      "id": 9,
+      "short": "I2",
+      "long": "Instructor 2 (not in use)"
+    },
+    {
+      "id": 10,
+      "short": "I3",
+      "long": "Senior Instructor"
+    },
+    {
+      "id": 11,
+      "short": "SUP",
+      "long": "Supervisor"
+    },
+    {
+      "id": 12,
+      "short": "ADM",
+      "long": "Administrator"
+    }
+  ],
+  "pilot_ratings": [
+    {
+      "id": 0,
+      "short_name": "NEW",
+      "long_name": "Basic Member"
+    },
+    {
+      "id": 1,
+      "short_name": "PPL",
+      "long_name": "Private Pilot Licence"
+    },
+    {
+      "id": 3,
+      "short_name": "IR",
+      "long_name": "Instrument Rating"
+    },
+    {
+      "id": 7,
+      "short_name": "CMEL",
+      "long_name": "Commercial Multi-Engine License"
+    },
+    {
+      "id": 15,
+      "short_name": "ATPL",
+      "long_name": "Airline Transport Pilot License"
+    }
+  ]
+}

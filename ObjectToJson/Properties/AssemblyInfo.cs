@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NotifyChangeProgressBar")]
+[assembly: AssemblyTitle("ObjectToJson")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("NotifyChangeProgressBar")]
+[assembly: AssemblyProduct("ObjectToJson")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5621322a-a940-43b8-9e41-d4aba2370d2f")]
+[assembly: Guid("dce21bce-c69c-4d7f-8bdc-f9839a6cb190")]
 
 // Version information for an assembly consists of the following four values:
 //
