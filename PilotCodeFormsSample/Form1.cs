@@ -32,6 +32,8 @@ namespace PilotCodeFormsSample
             {
                 PilotComboBox.SelectedIndex = callSignIndex;
             }
+
+            ActiveControl = PilotComboBox;
         }
 
         private void PilotComboBoxOnSelectedIndexChanged(object? sender, EventArgs e)
@@ -47,11 +49,11 @@ namespace PilotCodeFormsSample
 
             var flightPlan = pilot.flight_plan;
 
-            textBoxDeparture.Text = flightPlan.departure;
-            textBoxArrival.Text = flightPlan.arrival;
-            textBoxAlternate.Text = flightPlan.alternate;
-            textBoxAltitude.Text = flightPlan.altitude;
-            textBoxFlightPlan.Text = flightPlan.route;
+            textBoxDeparture.Text = flightPlan.Departure;
+            textBoxArrival.Text = flightPlan.Arrival;
+            textBoxAlternate.Text = flightPlan.Alternate;
+            textBoxAltitude.Text = flightPlan.Altitude;
+            textBoxFlightPlan.Text = flightPlan.Route;
         }
     }
 }
