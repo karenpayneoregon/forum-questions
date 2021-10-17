@@ -6,7 +6,7 @@ namespace SingletonStorage
     public sealed class RegistrationContainer
     {
         private static readonly Lazy<RegistrationContainer> Lazy = 
-            new Lazy<RegistrationContainer>(() => new RegistrationContainer());
+            new(() => new RegistrationContainer());
         
         public static RegistrationContainer Instance => Lazy.Value;
         
