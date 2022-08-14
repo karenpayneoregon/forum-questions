@@ -15,12 +15,7 @@ namespace DataGridViewCombo1.Classes
         public DataTable ColorDataTable { get; set; }
         public DataTable VendorDataTable { get; set; }
 
-        private DataTable _productTable = new DataTable();
-        public DataTable ProductDataTable
-        {
-            get => _productTable;
-            set => _productTable = value;
-        }
+        public DataTable ProductDataTable { get; set; } = new DataTable();
 
         /// <summary>
         /// Load main table for DataGridView

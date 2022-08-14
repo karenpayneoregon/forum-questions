@@ -129,6 +129,11 @@ namespace DataGridViewCombo1
                 // ReSharper disable once LocalizableElement
                 $"PK: {customerPrimaryKey} Vendor key {vendorKey} vendor: {vendorName} color id: {colorKey} - {colorName}";
         }
+
+        private void RefreshCurrentButton_Click(object sender, EventArgs e)
+        {
+            CurrentValuesView();
+        }
     }
 }
 

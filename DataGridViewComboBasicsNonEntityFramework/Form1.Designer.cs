@@ -38,12 +38,14 @@
             this.VendorComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numericUpDownColumnRight1 = new DataGridViewCombo1.Controls.NumericUpDownColumnRight();
+            this.RefreshCurrentButton = new System.Windows.Forms.Button();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel1
             // 
+            this.Panel1.Controls.Add(this.RefreshCurrentButton);
             this.Panel1.Controls.Add(this.DisplayInformationTextBox);
             this.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Panel1.Location = new System.Drawing.Point(0, 187);
@@ -55,7 +57,7 @@
             // 
             this.DisplayInformationTextBox.Location = new System.Drawing.Point(12, 20);
             this.DisplayInformationTextBox.Name = "DisplayInformationTextBox";
-            this.DisplayInformationTextBox.Size = new System.Drawing.Size(539, 20);
+            this.DisplayInformationTextBox.Size = new System.Drawing.Size(458, 20);
             this.DisplayInformationTextBox.TabIndex = 3;
             // 
             // ProductsDataGridView
@@ -112,6 +114,16 @@
             this.numericUpDownColumnRight1.HeaderText = "Qty";
             this.numericUpDownColumnRight1.Name = "numericUpDownColumnRight1";
             // 
+            // RefreshCurrentButton
+            // 
+            this.RefreshCurrentButton.Location = new System.Drawing.Point(476, 18);
+            this.RefreshCurrentButton.Name = "RefreshCurrentButton";
+            this.RefreshCurrentButton.Size = new System.Drawing.Size(75, 23);
+            this.RefreshCurrentButton.TabIndex = 4;
+            this.RefreshCurrentButton.Text = "Refresh";
+            this.RefreshCurrentButton.UseVisualStyleBackColor = true;
+            this.RefreshCurrentButton.Click += new System.EventHandler(this.RefreshCurrentButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,6 +154,7 @@
         private Controls.NumericUpDownColumnRight QtyNumericUpDownColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn InCartCheckBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn VendorComboBoxColumn;
+        private System.Windows.Forms.Button RefreshCurrentButton;
     }
 }
 
