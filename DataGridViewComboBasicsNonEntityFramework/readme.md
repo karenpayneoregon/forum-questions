@@ -10,4 +10,8 @@ Code sample for using DataGridViewComboBox and custom numeric DataGridView colum
 
 ### Screenshot
 
-![screenshot](../assets/DataGridViewComboBox1.png)
+Color and Vendor are DataGridViewComboBox columns
+
+![z](Assets/screenShot.png)
+
+![x](Assets/screenShot1.png)
