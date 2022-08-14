@@ -30,16 +30,16 @@
         {
             this.Panel1 = new System.Windows.Forms.Panel();
             this.DisplayInformationTextBox = new System.Windows.Forms.TextBox();
-            this.CustomersDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numericUpDownColumnRight1 = new DataGridViewCombo1.Controls.NumericUpDownColumnRight();
+            this.ProductsDataGridView = new System.Windows.Forms.DataGridView();
             this.ItemTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColorComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.QtyNumericUpDownColumn = new DataGridViewCombo1.Controls.NumericUpDownColumnRight();
             this.InCartCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.VendorComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numericUpDownColumnRight1 = new DataGridViewCombo1.Controls.NumericUpDownColumnRight();
             this.Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomersDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel1
@@ -58,32 +58,20 @@
             this.DisplayInformationTextBox.Size = new System.Drawing.Size(539, 20);
             this.DisplayInformationTextBox.TabIndex = 3;
             // 
-            // CustomersDataGridView
+            // ProductsDataGridView
             // 
-            this.CustomersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CustomersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ItemTextBoxColumn,
             this.ColorComboBoxColumn,
             this.QtyNumericUpDownColumn,
             this.InCartCheckBoxColumn,
             this.VendorComboBoxColumn});
-            this.CustomersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CustomersDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.CustomersDataGridView.Name = "CustomersDataGridView";
-            this.CustomersDataGridView.Size = new System.Drawing.Size(563, 187);
-            this.CustomersDataGridView.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Item";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // numericUpDownColumnRight1
-            // 
-            this.numericUpDownColumnRight1.DecimalPlaces = 2;
-            this.numericUpDownColumnRight1.HeaderText = "Qty";
-            this.numericUpDownColumnRight1.Name = "numericUpDownColumnRight1";
+            this.ProductsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProductsDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.ProductsDataGridView.Name = "ProductsDataGridView";
+            this.ProductsDataGridView.Size = new System.Drawing.Size(563, 187);
+            this.ProductsDataGridView.TabIndex = 3;
             // 
             // ItemTextBoxColumn
             // 
@@ -112,12 +100,24 @@
             this.VendorComboBoxColumn.HeaderText = "Vendor";
             this.VendorComboBoxColumn.Name = "VendorComboBoxColumn";
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Item";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // numericUpDownColumnRight1
+            // 
+            this.numericUpDownColumnRight1.DecimalPlaces = 2;
+            this.numericUpDownColumnRight1.HeaderText = "Qty";
+            this.numericUpDownColumnRight1.Name = "numericUpDownColumnRight1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 251);
-            this.Controls.Add(this.CustomersDataGridView);
+            this.Controls.Add(this.ProductsDataGridView);
             this.Controls.Add(this.Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
@@ -126,7 +126,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomersDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -134,7 +134,7 @@
         #endregion
         internal System.Windows.Forms.Panel Panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        internal System.Windows.Forms.DataGridView CustomersDataGridView;
+        internal System.Windows.Forms.DataGridView ProductsDataGridView;
         private Controls.NumericUpDownColumnRight numericUpDownColumnRight1;
         private System.Windows.Forms.TextBox DisplayInformationTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemTextBoxColumn;
