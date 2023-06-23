@@ -15,19 +15,14 @@ namespace DataGridViewCombo1.Classes
         public DataTable ColorDataTable { get; set; }
         public DataTable VendorDataTable { get; set; }
 
-        private DataTable _customerTable = new DataTable();
-        public DataTable CustomerDataTable
-        {
-            get => _customerTable;
-            set => _customerTable = value;
-        }
+        public DataTable ProductDataTable { get; set; } = new DataTable();
 
         /// <summary>
         /// Load main table for DataGridView
         /// </summary>
-        public void LoadCustomerDataTable()
+        public void LoadProductDataTable()
         {
-            CustomerDataTable = new DataTable();
+            ProductDataTable = new DataTable();
 
             using (var cn = new SqlConnection { ConnectionString = ConnectionString })
             {
@@ -35,7 +30,7 @@ namespace DataGridViewCombo1.Classes
                 {
                     cn.Open();
                     cmd.CommandText = "SELECT id,Item,ColorId,CustomerId, qty, InCart, VendorId  FROM Product";
-                    CustomerDataTable.Load(cmd.ExecuteReader());
+                    ProductDataTable.Load(cmd.ExecuteReader());
                 }
             }
         }

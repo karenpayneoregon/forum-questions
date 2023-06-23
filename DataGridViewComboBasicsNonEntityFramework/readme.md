@@ -1,8 +1,18 @@
 ﻿# About
 
-Code sample for using DataGridViewComboBox and custom numeric DataGridView column.
+Code sample for using DataGridViewComboBox and custom numeric DataGridView column. Only performs basic operations to read data.
 
-> Note, for real life application the item (phone type) should work with the color and vendor properties e.g. if iPhone 6 is selected the color and vendor should change dependent on what the vendor has in stock.
+To perform an edit operation look at the code in the form, CurrentValuesView method which shows how to get to keys that then can be used to send changes to the database.
+
+```csharp
+
+var productRow = ((DataRowView)_productBindingSource.Current).Row;
+var customerPrimaryKey = productRow.Field<int>("Id");
+var colorKey = productRow.Field<int>("ColorId");
+var vendorKey = productRow.Field<int>("VendorId");
+
+```
+
 
 ## Before running
 
@@ -10,4 +20,8 @@ Code sample for using DataGridViewComboBox and custom numeric DataGridView colum
 
 ### Screenshot
 
-![screenshot](../assets/DataGridViewComboBox1.png)
+Color and Vendor are DataGridViewComboBox columns
+
+![z](Assets/screenShot.png)
+
+![x](Assets/screenShot1.png)

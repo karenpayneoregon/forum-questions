@@ -14,7 +14,7 @@ namespace DataGridViewCombo1
     {
         readonly Operations _operations = new Operations();
 
-        readonly BindingSource _customerBindingSource = new BindingSource();
+        readonly BindingSource _productBindingSource = new BindingSource();
         readonly BindingSource _vendorBindingSource = new BindingSource(); 
         readonly BindingSource _colorBindingSource = new BindingSource(); 
 
@@ -22,19 +22,19 @@ namespace DataGridViewCombo1
         {
             InitializeComponent();
 
-            CustomersDataGridView.CurrentCellDirtyStateChanged += _CurrentCellDirtyStateChanged;
+            ProductsDataGridView.CurrentCellDirtyStateChanged += _CurrentCellDirtyStateChanged;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
             Setup();
 
-            CustomersDataGridView.AllowUserToAddRows = false ;
-            _customerBindingSource.PositionChanged += _customerBindingSource_PositionChanged;
+            ProductsDataGridView.AllowUserToAddRows = false ;
+            _productBindingSource.PositionChanged += _customerBindingSource_PositionChanged;
 
             LoadData();
             CurrentValuesView();
 
-            ActiveControl = CustomersDataGridView;
+            ActiveControl = ProductsDataGridView;
 
         }
 
@@ -48,16 +48,16 @@ namespace DataGridViewCombo1
 
             _operations.LoadColorsReferenceDataTable();
             _operations.LoadVendorsReferenceDataTable();
+
             _vendorBindingSource.DataSource = _operations.VendorDataTable;
             _colorBindingSource.DataSource = _operations.ColorDataTable;
-
 
             ColorComboBoxColumn.DisplayMember = "ColorText";
             ColorComboBoxColumn.ValueMember = "ColorId";
             ColorComboBoxColumn.DataPropertyName = "ColorId";
             ColorComboBoxColumn.DataSource = _colorBindingSource;
             ColorComboBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
-            VendorComboBoxColumn.SortMode = DataGridViewColumnSortMode.Automatic;
+            ColorComboBoxColumn.SortMode = DataGridViewColumnSortMode.Automatic;
 
             VendorComboBoxColumn.DisplayMember = "VendorName";
             VendorComboBoxColumn.ValueMember = "VendorId";
@@ -73,66 +73,38 @@ namespace DataGridViewCombo1
         private void LoadData()
         {
 
-            _operations.LoadCustomerDataTable();
+            _operations.LoadProductDataTable();
 
-            CustomersDataGridView.AutoGenerateColumns = false;
+            ProductsDataGridView.AutoGenerateColumns = false;
 
             ItemTextBoxColumn.DataPropertyName = "Item";
-            _customerBindingSource.DataSource = _operations.CustomerDataTable;
+            _productBindingSource.DataSource = _operations.ProductDataTable;
 
-            CustomersDataGridView.DataSource = _customerBindingSource;
+            ProductsDataGridView.DataSource = _productBindingSource;
 
-            //see comments in event code.
-            //CustomersDataGridView.CellFormatting += CustomersDataGridView_CellFormatting;
-
-        }
-        /// <summary>
-        /// To be moved out of here, placed here to reply to a forum question.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CustomersDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-
-            if (e.ColumnIndex == CustomersDataGridView.Columns["ColorComboBoxColumn"].Index && CustomersDataGridView.Rows[e.RowIndex].DataBoundItem != null)
-            {
-                var colorKeyValue = ((DataRowView)CustomersDataGridView.Rows[e.RowIndex].DataBoundItem).Row.Field<int>("ColorId");
-                if (colorKeyValue == 2)
-                {
-                    //CustomersDataGridView.Rows[e.RowIndex].Cells[CustomersDataGridView.Columns["ColorComboBoxColumn"].Index].Style = new DataGridViewCellStyle { ForeColor = Color.White, BackColor = Color.Tomato };
-
-                    CustomersDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-                else
-                {
-                    //CustomersDataGridView.Rows[e.RowIndex].Cells[CustomersDataGridView.Columns["ColorComboBoxColumn"].Index].Style = null;
-                    CustomersDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Empty;
-                }
-            }
         }
 
         private void _CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
-            CustomersDataGridView.CurrentCellDirtyStateChanged -= _CurrentCellDirtyStateChanged;
-            CustomersDataGridView.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            CustomersDataGridView.CurrentCellDirtyStateChanged += _CurrentCellDirtyStateChanged;
+            ProductsDataGridView.CurrentCellDirtyStateChanged -= _CurrentCellDirtyStateChanged;
+            ProductsDataGridView.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            ProductsDataGridView.CurrentCellDirtyStateChanged += _CurrentCellDirtyStateChanged;
         }
        
-
         private void CurrentValuesView()
         {
 
-            if (_customerBindingSource.Current == null)
+            if (_productBindingSource.Current == null)
             {
                 return;
             }
 
             #region Get primary table information
 
-            var customerRow = ((DataRowView)_customerBindingSource.Current).Row;
-            var customerPrimaryKey = customerRow.Field<int>("Id");
-            var colorKey = customerRow.Field<int>("ColorId");
-            var vendorKey = customerRow.Field<int>("VendorId");
+            var productRow = ((DataRowView)_productBindingSource.Current).Row;
+            var customerPrimaryKey = productRow.Field<int>("Id");
+            var colorKey = productRow.Field<int>("ColorId");
+            var vendorKey = productRow.Field<int>("VendorId");
 
             #endregion
 
@@ -156,6 +128,11 @@ namespace DataGridViewCombo1
             DisplayInformationTextBox.Text =
                 // ReSharper disable once LocalizableElement
                 $"PK: {customerPrimaryKey} Vendor key {vendorKey} vendor: {vendorName} color id: {colorKey} - {colorName}";
+        }
+
+        private void RefreshCurrentButton_Click(object sender, EventArgs e)
+        {
+            CurrentValuesView();
         }
     }
 }
