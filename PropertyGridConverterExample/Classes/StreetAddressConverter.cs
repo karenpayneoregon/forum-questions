@@ -20,10 +20,10 @@ public class StreetAddressConverter : TypeConverter
     // Convert from a string.
     public override object ConvertFrom(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value)
     {
-        if (value is string)
+        if (value is string item)
         {
             // Split the string separated by commas.
-            string txt = (string)(value);
+            string txt = item;
             string[] fields = txt.Split([',']);
 
             try

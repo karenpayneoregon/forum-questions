@@ -5,15 +5,16 @@ namespace PropertyGridConverterExample;
 
 public partial class Form1 : Form
 {
-    private BindingList<Person> _personList = new();
-    private BindingSource _personBindingSource = new();
+    private BindingList<Person> _personList = [];
+    private BindingSource _personBindingSource = [];
     public Form1()
     {
         InitializeComponent();
-        PeopleListBox.SelectedIndexChanged += LstPeopleOnSelectedIndexChanged;
+
+        PeopleListBox.SelectedIndexChanged += PeopleOnSelectedIndexChanged;
     }
 
-    private void LstPeopleOnSelectedIndexChanged(object? sender, EventArgs e)
+    private void PeopleOnSelectedIndexChanged(object? sender, EventArgs e)
     {
         // Reset the DisplayMember to make
         // the ListBox refresh its list.
@@ -28,15 +29,15 @@ public partial class Form1 : Form
     {
         Person[] people =
         [
-            new Person() {
+            new() {
                 FirstName = "Ann", LastName = "Archer",
                 Address = new StreetAddress() {Street = "101 Ash Ave", City = "Ann Arbor", State = "MI", Zip = "12345"},
                 Email = "Ann@anywhere.com", Phone = "703-287-3798"},
-            new Person() {
+            new() {
                 FirstName = "Ben", LastName = "Best",
                 Address = new StreetAddress() { Street = "231 Beach Blvd", City = "Boulder", State = "CO", Zip = "24361"},
                 Email = "Ben@bestplace.com", Phone = "209-783-2918"},
-            new Person() {
+            new() {
                 FirstName = "Cindy", LastName = "Carter",
                 Address = new StreetAddress() { Street = "3783 Cherry Ct", City = "Cedar Rapids", State = "IA", Zip = "36268"},
                 Email = "CindyCarter@TheCarters.com", Phone = "404-329-0182"}
@@ -52,6 +53,7 @@ public partial class Form1 : Form
     private void CurrentButton_Click(object sender, EventArgs e)
     {
         Person person = _personList[PeopleListBox.SelectedIndex];
+        MessageBox.Show($"{person.FirstName} {person.LastName}");
     }
 
 }
