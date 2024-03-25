@@ -24,7 +24,7 @@ public class StreetAddressConverter : TypeConverter
         {
             // Split the string separated by commas.
             string txt = (string)(value);
-            string[] fields = txt.Split(new[] { ',' });
+            string[] fields = txt.Split([',']);
 
             try
             {

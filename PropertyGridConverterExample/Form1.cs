@@ -10,24 +10,24 @@ public partial class Form1 : Form
     public Form1()
     {
         InitializeComponent();
-        lstPeople.SelectedIndexChanged += LstPeopleOnSelectedIndexChanged;
+        PeopleListBox.SelectedIndexChanged += LstPeopleOnSelectedIndexChanged;
     }
 
     private void LstPeopleOnSelectedIndexChanged(object? sender, EventArgs e)
     {
         // Reset the DisplayMember to make
         // the ListBox refresh its list.
-        lstPeople.DisplayMember = "FirstName";
-        lstPeople.DisplayMember = null!;
+        PeopleListBox.DisplayMember = "FirstName";
+        PeopleListBox.DisplayMember = null!;
 
         // Display the selected Person in the PropertyGrid.
-        PeopleGrid.SelectedObject = lstPeople.SelectedItem;
+        PeopleGrid.SelectedObject = PeopleListBox.SelectedItem;
     }
 
     private void Form1_Load(object sender, EventArgs e)
     {
         Person[] people =
-        {
+        [
             new Person() {
                 FirstName = "Ann", LastName = "Archer",
                 Address = new StreetAddress() {Street = "101 Ash Ave", City = "Ann Arbor", State = "MI", Zip = "12345"},
@@ -39,19 +39,19 @@ public partial class Form1 : Form
             new Person() {
                 FirstName = "Cindy", LastName = "Carter",
                 Address = new StreetAddress() { Street = "3783 Cherry Ct", City = "Cedar Rapids", State = "IA", Zip = "36268"},
-                Email = "CindyCarter@TheCarters.com", Phone = "404-329-0182"},
-        };
+                Email = "CindyCarter@TheCarters.com", Phone = "404-329-0182"}
+        ];
 
         _personList = new BindingList<Person>(people);
         _personBindingSource.DataSource = _personList;
 
         // Display them in a ListBox.
-        lstPeople.DataSource = _personBindingSource;
+        PeopleListBox.DataSource = _personBindingSource;
     }
 
     private void CurrentButton_Click(object sender, EventArgs e)
     {
-        Person person = _personList[lstPeople.SelectedIndex];
+        Person person = _personList[PeopleListBox.SelectedIndex];
     }
 
 }
